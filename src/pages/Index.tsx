@@ -46,7 +46,7 @@ const Index = () => {
             <span className="inline-block px-4 py-1.5 rounded-full border border-primary-foreground/20 text-primary-foreground/70 text-sm font-medium mb-6">
               40+ Years of Industrial Excellence
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight max-w-4xl mx-auto">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight max-w-4xl mx-auto">
               Engineering Industrial Flow Solutions
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">
