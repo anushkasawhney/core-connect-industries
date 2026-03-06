@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import companyLogo from "@/assets/company-logo.png";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
@@ -8,9 +9,7 @@ const Footer = () => (
         {/* Company */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-md bg-primary-foreground/10 flex items-center justify-center">
-              <span className="font-heading font-bold text-lg">DA</span>
-            </div>
+            <img src={companyLogo} alt="Dupon Agencies logo" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-heading font-bold text-lg">Dupon Agencies</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">

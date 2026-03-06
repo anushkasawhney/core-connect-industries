@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { productCategories, brands } from "@/data/products";
 import { motion, AnimatePresence } from "framer-motion";
+import companyLogo from "@/assets/company-logo.png";
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -15,9 +16,7 @@ const Navbar = () => {
       <div className="container-wide mx-auto flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md gradient-navy flex items-center justify-center">
-            <span className="font-heading font-bold text-primary-foreground text-sm sm:text-lg">DA</span>
-          </div>
+          <img src={companyLogo} alt="Dupon Agencies logo" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
           <div className="hidden md:block">
             <span className="font-heading font-bold text-foreground text-lg leading-tight block">Dupon</span>
             <span className="text-xs text-muted-foreground tracking-widest uppercase">Agencies</span>
