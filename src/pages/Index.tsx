@@ -21,10 +21,26 @@ const Index = () => {
     <main>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroBg} alt="Industrial engineering background" className="w-full h-full object-cover" />
+        <motion.div
+          className="absolute inset-0 origin-center"
+          initial={{ scale: 1.3, rotateX: 8, rotateY: -5 }}
+          animate={{ scale: 1, rotateX: 0, rotateY: 0 }}
+          transition={{ duration: 4, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{ perspective: 1200, transformStyle: "preserve-3d" }}
+        >
+          <motion.img
+            src={heroBg}
+            alt="Industrial engineering background"
+            className="w-full h-full object-cover"
+            animate={{
+              scale: [1, 1.04, 1],
+              rotateY: [0, 2, -2, 0],
+              rotateX: [0, -1, 1, 0],
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          />
           <div className="absolute inset-0 bg-navy-dark/80" />
-        </div>
+        </motion.div>
         <div className="relative z-10 container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-primary-foreground/20 text-primary-foreground/70 text-sm font-medium mb-6">
