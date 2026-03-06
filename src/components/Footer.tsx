@@ -9,9 +9,9 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 rounded-md bg-primary-foreground/10 flex items-center justify-center">
-              <span className="font-heading font-bold text-lg">IE</span>
+              <span className="font-heading font-bold text-lg">DA</span>
             </div>
-            <span className="font-heading font-bold text-lg">Industrial Engineering</span>
+            <span className="font-heading font-bold text-lg">Dupon Agencies</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             Trusted supplier of industrial hoses, rubber moulding components, gaskets, and sealing solutions for over 40 years.
@@ -50,7 +50,7 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
-        <p>© {new Date().getFullYear()} Industrial Engineering. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Dupon Agencies. All rights reserved.</p>
         <div className="flex gap-6">
           <Link to="/contact" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
           <Link to="/contact" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
