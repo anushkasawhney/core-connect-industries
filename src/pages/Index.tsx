@@ -25,7 +25,7 @@ const Index = () => {
           className="absolute inset-0 origin-center"
           initial={{ scale: 1.3, rotateX: 8, rotateY: -5 }}
           animate={{ scale: 1, rotateX: 0, rotateY: 0 }}
-          transition={{ duration: 4, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
           style={{ perspective: 1200, transformStyle: "preserve-3d" }}
         >
           <motion.img
@@ -33,11 +33,11 @@ const Index = () => {
             alt="Industrial engineering background"
             className="w-full h-full object-cover"
             animate={{
-              scale: [1, 1.04, 1],
-              rotateY: [0, 2, -2, 0],
-              rotateX: [0, -1, 1, 0],
+              scale: [1, 1.06, 1, 1.04, 1],
+              rotateY: [0, 3, -3, 2, 0],
+              rotateX: [0, -2, 2, -1, 0],
             }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           />
           <div className="absolute inset-0 bg-navy-dark/80" />
         </motion.div>
