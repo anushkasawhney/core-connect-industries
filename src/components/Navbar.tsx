@@ -33,21 +33,20 @@ const Navbar = () => {
             onToggle={() => setActiveDropdown(activeDropdown === "products" ? null : "products")}
             onClose={() => setActiveDropdown(null)}
           >
-            <div className="grid grid-cols-2 gap-1 p-2 min-w-[340px] sm:min-w-[400px]">
+            <div className="grid grid-cols-1 gap-1 p-2 min-w-[220px] sm:min-w-[260px]">
               {productCategories.map((cat) => (
                 <Link
                   key={cat.id}
                   to={`/products/${cat.slug}`}
-                  className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-md hover:bg-accent transition-colors"
+                  className="p-2 sm:p-3 rounded-md hover:bg-accent transition-colors text-xs sm:text-sm font-medium text-foreground"
                   onClick={() => setActiveDropdown(null)}
                 >
-                  <img src={cat.image} alt={cat.name} className="w-8 h-8 sm:w-10 sm:h-10 rounded object-cover" />
-                  <span className="text-xs sm:text-sm font-medium text-foreground">{cat.name}</span>
+                  {cat.name}
                 </Link>
               ))}
               <Link
                 to="/products"
-                className="col-span-2 text-center p-2 text-xs sm:text-sm font-medium text-highlight hover:underline"
+                className="text-center p-2 text-xs sm:text-sm font-medium text-highlight hover:underline"
                 onClick={() => setActiveDropdown(null)}
               >
                 View All Products →
@@ -114,7 +113,7 @@ const DropdownNav = ({
 }: {
   label: string; active: boolean; isOpen: boolean; onToggle: () => void; onClose: () => void; children: React.ReactNode;
 }) => (
-  <div className="relative" onMouseEnter={onToggle} onMouseLeave={onClose}>
+  <div className="relative" onMouseEnter={() => onToggle()} onMouseLeave={onClose}>
     <button
       className={`flex items-center gap-1 px-2 sm:px-3 lg:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
         active ? "text-highlight" : "text-foreground hover:text-highlight hover:bg-accent"
