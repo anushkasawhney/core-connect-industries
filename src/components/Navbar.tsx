@@ -16,11 +16,11 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md gradient-navy flex items-center justify-center">
-            <span className="font-heading font-bold text-primary-foreground text-sm sm:text-lg">IE</span>
+            <span className="font-heading font-bold text-primary-foreground text-sm sm:text-lg">DA</span>
           </div>
           <div className="hidden md:block">
-            <span className="font-heading font-bold text-foreground text-lg leading-tight block">Industrial</span>
-            <span className="text-xs text-muted-foreground tracking-widest uppercase">Engineering</span>
+            <span className="font-heading font-bold text-foreground text-lg leading-tight block">Dupon</span>
+            <span className="text-xs text-muted-foreground tracking-widest uppercase">Agencies</span>
           </div>
         </Link>
 
