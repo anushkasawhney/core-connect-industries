@@ -57,7 +57,7 @@ const Navbar = () => {
             label="Brands"
             active={location.pathname.startsWith("/brands")}
             isOpen={activeDropdown === "brands"}
-            onToggle={() => setActiveDropdown(activeDropdown === "brands" ? null : "brands")}
+            onOpen={() => setActiveDropdown("brands")}
             onClose={() => setActiveDropdown(null)}
           >
             <div className="grid grid-cols-1 gap-1 p-2 min-w-[200px] sm:min-w-[240px]">
@@ -109,11 +109,11 @@ const NavItem = ({ to, label, active }: { to: string; label: string; active: boo
 );
 
 const DropdownNav = ({
-  label, active, isOpen, onToggle, onClose, children,
+  label, active, isOpen, onOpen, onClose, children,
 }: {
-  label: string; active: boolean; isOpen: boolean; onToggle: () => void; onClose: () => void; children: React.ReactNode;
+  label: string; active: boolean; isOpen: boolean; onOpen: () => void; onClose: () => void; children: React.ReactNode;
 }) => (
-  <div className="relative" onMouseEnter={onToggle} onMouseLeave={onClose}>
+  <div className="relative" onMouseEnter={onOpen} onMouseLeave={onClose}>
     <Link
       to={label === "Products" ? "/products" : "/brands"}
       className={`flex items-center gap-1 px-2 sm:px-3 lg:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
