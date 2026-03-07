@@ -134,7 +134,8 @@ const DropdownNav = ({
         >
           <div className="bg-card rounded-lg border border-border industrial-shadow z-50">
         >
-          {children}
+            {children}
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
