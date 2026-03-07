@@ -2,20 +2,20 @@ import { motion } from "framer-motion";
 import { industries } from "@/data/products";
 import { Building2, Sprout, Factory, FlaskConical, Fuel, Car } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import AnimatedHero from "@/components/AnimatedHero";
+import heroIndustries from "@/assets/hero-industries.jpg";
 import { Link } from "react-router-dom";
 
 const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car };
 
 const Industries = () => (
-  <main className="pt-20">
-    <section className="section-padding gradient-navy">
-      <div className="container-wide mx-auto text-center">
-        <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">Industries We Serve</h1>
-        <p className="mt-4 text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-          Delivering mission-critical industrial flow solutions to diverse sectors across India.
-        </p>
-      </div>
-    </section>
+  <main>
+    <AnimatedHero
+      image={heroIndustries}
+      badge="Sector Expertise"
+      title="Industries We Serve"
+      subtitle="Delivering mission-critical industrial flow solutions to diverse sectors across India."
+    />
     <section className="section-padding bg-background">
       <div className="container-wide mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

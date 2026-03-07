@@ -2,22 +2,16 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
+import AnimatedHero from "@/components/AnimatedHero";
 
 const Contact = () => (
-  <main className="pt-20">
-    {/* Hero */}
-    <section className="relative py-20 md:py-28">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Industrial background" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-navy-dark/85" />
-      </div>
-      <div className="relative z-10 container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">Contact Us</h1>
-        <p className="mt-4 text-primary-foreground/70 text-lg max-w-xl mx-auto">
-          Get in touch for product enquiries, quotes, and technical support.
-        </p>
-      </div>
-    </section>
+  <main>
+    <AnimatedHero
+      image={heroBg}
+      badge="Get In Touch"
+      title="Contact Us"
+      subtitle="Get in touch for product enquiries, quotes, and technical support."
+    />
 
     {/* Contact Info + Form */}
     <section className="section-padding bg-background">

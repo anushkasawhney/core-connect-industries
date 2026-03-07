@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import AnimatedHero from "@/components/AnimatedHero";
+import heroAbout from "@/assets/hero-about.jpg";
 import { Shield, Eye, Target, Award, Building2, Users } from "lucide-react";
 
 const timelineEvents = [
@@ -13,15 +15,13 @@ const timelineEvents = [
 ];
 
 const About = () => (
-  <main className="pt-20">
-    <section className="section-padding gradient-navy">
-      <div className="container-wide mx-auto text-center">
-        <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">About Us</h1>
-        <p className="mt-4 text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-          Four decades of engineering industrial flow solutions with trust, precision, and reliability.
-        </p>
-      </div>
-    </section>
+  <main>
+    <AnimatedHero
+      image={heroAbout}
+      badge="Our Story"
+      title="About Us"
+      subtitle="Four decades of engineering industrial flow solutions with trust, precision, and reliability."
+    />
 
     {/* Stats */}
     <section className="section-padding bg-card">

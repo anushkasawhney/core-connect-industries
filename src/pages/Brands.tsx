@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { brands } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
+import AnimatedHero from "@/components/AnimatedHero";
+import heroBrands from "@/assets/hero-brands.jpg";
 
 const Brands = () => (
-  <main className="pt-20">
-    <section className="section-padding gradient-navy">
-      <div className="container-wide mx-auto text-center">
-        <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">Our Brands</h1>
-        <p className="mt-4 text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-          We partner with leading manufacturers to bring you the highest quality industrial products.
-        </p>
-      </div>
-    </section>
+  <main>
+    <AnimatedHero
+      image={heroBrands}
+      badge="Trusted Partners"
+      title="Our Brands"
+      subtitle="We partner with leading manufacturers to bring you the highest quality industrial products."
+    />
     <section className="section-padding bg-background">
       <div className="container-wide mx-auto">
         <SectionHeading title="Brand Partners" subtitle="Click on a brand to learn more about their products and capabilities." />

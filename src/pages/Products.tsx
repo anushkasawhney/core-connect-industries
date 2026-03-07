@@ -1,31 +1,20 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { productCategories } from "@/data/products";
-import productsHero from "@/assets/products-hero.jpg";
+import heroProducts from "@/assets/hero-products.jpg";
 import SectionHeading from "@/components/SectionHeading";
+import AnimatedHero from "@/components/AnimatedHero";
 
 const Products = () => (
-  <main className="pt-20">
-    {/* Hero */}
-    <section className="section-padding gradient-navy">
-      <div className="container-wide mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="inline-block px-3 py-1 rounded-full border border-primary-foreground/20 text-primary-foreground/70 text-sm mb-4">Our Products</span>
-          <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">
-            Comprehensive Industrial Product Range
-          </h1>
-          <p className="mt-4 text-primary-foreground/70 text-lg">
-            From industrial hoses and hydraulic assemblies to precision gaskets and custom rubber components — we supply engineering solutions that keep industries moving.
-          </p>
-          <Link to="/contact" className="inline-flex mt-6 px-6 py-3 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity">
-            Request Quote
-          </Link>
-        </div>
-        <div className="rounded-lg overflow-hidden industrial-shadow">
-          <img src={productsHero} alt="Industrial products range" className="w-full h-auto" />
-        </div>
-      </div>
-    </section>
+  <main>
+    <AnimatedHero
+      image={heroProducts}
+      badge="Our Products"
+      title="Comprehensive Industrial Product Range"
+      subtitle="From industrial hoses and hydraulic assemblies to precision gaskets and custom rubber components — we supply engineering solutions that keep industries moving."
+      ctaText="Request Quote"
+      ctaLink="/contact"
+    />
 
     {/* Product Grid */}
     <section className="section-padding bg-background">
