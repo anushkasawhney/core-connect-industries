@@ -133,7 +133,6 @@ const DropdownNav = ({
           className="absolute top-full left-0 pt-1"
         >
           <div className="bg-card rounded-lg border border-border industrial-shadow z-50">
-        >
             {children}
           </div>
         </motion.div>
