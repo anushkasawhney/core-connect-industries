@@ -24,7 +24,7 @@ const Navbar = () => {
         </Link>
 
         {/* Nav Links - Always visible horizontally */}
-        <div className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto scrollbar-hide">
+        <div className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto md:overflow-visible overflow-y-visible scrollbar-hide relative">
           <NavItem to="/" label="Home" active={isActive("/")} />
           <DropdownNav
             label="Products"
