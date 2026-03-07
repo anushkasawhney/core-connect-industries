@@ -40,14 +40,15 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Link to={`/products/${cat.slug}`} className="block group glass-card hover-lift overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <Link to={`/products/${cat.slug}`} className="block group glass-card overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_-10px_hsl(var(--highlight)/0.3)] hover:border-highlight/30">
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-heading font-semibold text-foreground text-lg">{cat.name}</h3>
+                  <h3 className="font-heading font-semibold text-foreground text-lg group-hover:text-highlight transition-colors duration-300">{cat.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{cat.description}</p>
-                  <span className="mt-3 inline-flex text-sm font-medium text-highlight">View Details →</span>
+                  <span className="mt-3 inline-flex text-sm font-medium text-highlight group-hover:translate-x-1 transition-transform duration-300">View Details →</span>
                 </div>
               </Link>
             </motion.div>
