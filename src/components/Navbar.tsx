@@ -130,7 +130,9 @@ const DropdownNav = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.15 }}
-          className="absolute top-full left-0 mt-1 bg-card rounded-lg border border-border industrial-shadow z-50"
+          className="absolute top-full left-0 pt-1"
+        >
+          <div className="bg-card rounded-lg border border-border industrial-shadow z-50">
         >
           {children}
         </motion.div>
