@@ -113,7 +113,7 @@ const DropdownNav = ({
 }: {
   label: string; active: boolean; isOpen: boolean; onToggle: () => void; onClose: () => void; children: React.ReactNode;
 }) => (
-  <div className="relative" onMouseEnter={() => onToggle()} onMouseLeave={onClose}>
+  <div className="relative" onMouseEnter={onToggle} onMouseLeave={onClose}>
     <Link
       to={label === "Products" ? "/products" : "/brands"}
       className={`flex items-center gap-1 px-2 sm:px-3 lg:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
