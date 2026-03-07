@@ -30,7 +30,7 @@ const Navbar = () => {
             label="Products"
             active={location.pathname.startsWith("/products")}
             isOpen={activeDropdown === "products"}
-            onToggle={() => setActiveDropdown(activeDropdown === "products" ? null : "products")}
+            onOpen={() => setActiveDropdown("products")}
             onClose={() => setActiveDropdown(null)}
           >
             <div className="grid grid-cols-1 gap-1 p-2 min-w-[220px] sm:min-w-[260px]">
