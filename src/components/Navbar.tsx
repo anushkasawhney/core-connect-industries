@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border/50 industrial-shadow">
-      <div className="container-wide mx-auto flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
+      <div className="container-wide mx-auto flex items-center justify-between h-14 md:h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
           <img src={companyLogo} alt="Dupon Industrial Enterprises logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" />
@@ -68,10 +68,6 @@ const Navbar = () => {
           <NavItem to="/contact" label="Contact" active={isActive("/contact")} />
         </div>
 
-        {/* Desktop CTA */}
-        <Link to="/contact" className="hidden md:inline-flex items-center px-5 py-2.5 rounded-md gradient-navy text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity shrink-0">
-          Request Quote
-        </Link>
 
         {/* Mobile hamburger */}
         <button className="md:hidden p-2 rounded-md hover:bg-accent transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
