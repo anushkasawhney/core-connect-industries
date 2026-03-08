@@ -17,6 +17,26 @@ import industryChemical from "@/assets/industry-chemical.jpg";
 import industryOilgas from "@/assets/industry-oilgas.jpg";
 import industryAutomotive from "@/assets/industry-automotive.jpg";
 
+// Subcategory images
+import subHosePipes from "@/assets/sub-hose-pipes.jpg";
+import subRubberSheets from "@/assets/sub-rubber-sheets.jpg";
+import subPvcHose from "@/assets/sub-pvc-hose.jpg";
+import subCustomHose from "@/assets/sub-custom-hose.jpg";
+import subHydraulicHose from "@/assets/sub-hydraulic-hose.jpg";
+import subElectricalMats from "@/assets/sub-electrical-mats.jpg";
+import subNylonPvc from "@/assets/sub-nylon-pvc.jpg";
+import subSkirtRubber from "@/assets/sub-skirt-rubber.jpg";
+import subDuctHose from "@/assets/sub-duct-hose.jpg";
+import subSiliconeHose from "@/assets/sub-silicone-hose.jpg";
+import subSsPtfeHose from "@/assets/sub-ss-ptfe-hose.jpg";
+import subHoseFittings from "@/assets/sub-hose-fittings.jpg";
+import subSpiralGasket from "@/assets/sub-spiral-gasket.jpg";
+import subRingGasket from "@/assets/sub-ring-gasket.jpg";
+import subNonmetalGasket from "@/assets/sub-nonmetal-gasket.jpg";
+import subOrings from "@/assets/sub-orings.jpg";
+import subBushings from "@/assets/sub-bushings.jpg";
+import subCustomMoulding from "@/assets/sub-custom-moulding.jpg";
+
 // Brand logos
 import brandKohinoor from "@/assets/brand-kohinoor.png";
 import brandDunlop from "@/assets/brand-dunlop.png";
@@ -78,18 +98,18 @@ export const productCategories: ProductCategory[] = [
       { label: "Standards", value: "IS, BS, DIN, SAE" },
     ],
     subcategories: [
-      { id: "1a", name: "Industrial Hose Pipes", description: "General-purpose rubber hose pipes", details: "Premium rubber hose pipes for industrial fluid transfer, air supply, and material handling. Available in various sizes and pressure ratings.", image: hosesGallery1 },
-      { id: "1b", name: "Industrial Rubber Sheets", description: "Commercial & insertion grade sheets", details: "Natural rubber, neoprene, nitrile, and EPDM rubber sheets in 1mm to 50mm thickness for general industrial applications.", image: hosesGallery2 },
-      { id: "1c", name: "PVC Reinforced Flexible Hose Pipes", description: "Braided PVC for medium pressure", details: "Polyester-braided PVC hoses with crystal clear visibility, ideal for water transfer, air supply, and agricultural use.", image: productHoses },
-      { id: "1d", name: "Special Rubber Hose Pipes (Custom Made)", description: "Tailor-made to your specifications", details: "Custom-designed rubber hoses manufactured to exact specifications for unique applications. From prototype to bulk production.", image: hosesGallery1 },
-      { id: "1e", name: "High Pressure/Temperature Hydraulic Hose Pipes", description: "SAE/DIN rated hydraulic hoses", details: "Wire-braided and spiral-wound hydraulic hoses rated up to 420 bar. Temperature range -40°C to +125°C. SAE 100R1 to R13.", image: hosesGallery2 },
-      { id: "1f", name: "Electrical Rubber Insulation Mats", description: "As per IS-5425/IS-15652", details: "Electrical insulation mats tested and certified to IS-5425 and IS-15652 standards. Available in all voltage classes from 1.1kV to 66kV.", image: productHoses },
-      { id: "1g", name: "Nylon Braided PVC Flexible Hose Pipes", description: "Lightweight, durable PVC hoses", details: "Nylon-reinforced PVC hoses offering excellent flexibility with higher burst pressure ratings for demanding applications.", image: hosesGallery1 },
-      { id: "1h", name: "Skirt Rubber Board/Lagging Rubber Sheets", description: "For conveyor belt systems", details: "High-quality skirt rubber boards and lagging sheets for conveyor belt systems. Wear-resistant and available in various hardness grades.", image: hosesGallery2 },
-      { id: "1i", name: "PVC Reinforced Flexible Duct Hose Pipes", description: "For ducting and ventilation", details: "Flexible PVC duct hoses with spiral wire reinforcement for dust collection, fume extraction, and ventilation systems.", image: productHoses },
-      { id: "1j", name: "Silicon Transparent/Braided Flexible Hose Pipes", description: "FDA-grade silicone hoses", details: "Medical and food-grade silicone hoses. Temperature rated -60°C to +200°C. Available transparent and braided varieties.", image: hosesGallery1 },
-      { id: "1k", name: "SS/PTFE (Teflon) Hose Pipes with Fittings & Bellows", description: "Corrosion-resistant metallic hoses", details: "Stainless steel corrugated and PTFE-lined hoses with end fittings for chemical, pharmaceutical, and high-temperature applications. Expansion bellows also available.", image: hosesGallery2 },
-      { id: "1l", name: "Hose Accessories and Fittings", description: "Clamps, couplings, adaptors", details: "Complete range of hose accessories including hose clamps, quick-release couplings, cam-lock fittings, and band-it clamps.", image: productHoses },
+      { id: "1a", name: "Industrial Hose Pipes", description: "General-purpose rubber hose pipes", details: "Premium rubber hose pipes for industrial fluid transfer, air supply, and material handling. Available in various sizes and pressure ratings.", image: subHosePipes },
+      { id: "1b", name: "Industrial Rubber Sheets", description: "Commercial & insertion grade sheets", details: "Natural rubber, neoprene, nitrile, and EPDM rubber sheets in 1mm to 50mm thickness for general industrial applications.", image: subRubberSheets },
+      { id: "1c", name: "PVC Reinforced Flexible Hose Pipes", description: "Braided PVC for medium pressure", details: "Polyester-braided PVC hoses with crystal clear visibility, ideal for water transfer, air supply, and agricultural use.", image: subPvcHose },
+      { id: "1d", name: "Special Rubber Hose Pipes (Custom Made)", description: "Tailor-made to your specifications", details: "Custom-designed rubber hoses manufactured to exact specifications for unique applications. From prototype to bulk production.", image: subCustomHose },
+      { id: "1e", name: "High Pressure/Temperature Hydraulic Hose Pipes", description: "SAE/DIN rated hydraulic hoses", details: "Wire-braided and spiral-wound hydraulic hoses rated up to 420 bar. Temperature range -40°C to +125°C. SAE 100R1 to R13.", image: subHydraulicHose },
+      { id: "1f", name: "Electrical Rubber Insulation Mats", description: "As per IS-5425/IS-15652", details: "Electrical insulation mats tested and certified to IS-5425 and IS-15652 standards. Available in all voltage classes from 1.1kV to 66kV.", image: subElectricalMats },
+      { id: "1g", name: "Nylon Braided PVC Flexible Hose Pipes", description: "Lightweight, durable PVC hoses", details: "Nylon-reinforced PVC hoses offering excellent flexibility with higher burst pressure ratings for demanding applications.", image: subNylonPvc },
+      { id: "1h", name: "Skirt Rubber Board/Lagging Rubber Sheets", description: "For conveyor belt systems", details: "High-quality skirt rubber boards and lagging sheets for conveyor belt systems. Wear-resistant and available in various hardness grades.", image: subSkirtRubber },
+      { id: "1i", name: "PVC Reinforced Flexible Duct Hose Pipes", description: "For ducting and ventilation", details: "Flexible PVC duct hoses with spiral wire reinforcement for dust collection, fume extraction, and ventilation systems.", image: subDuctHose },
+      { id: "1j", name: "Silicon Transparent/Braided Flexible Hose Pipes", description: "FDA-grade silicone hoses", details: "Medical and food-grade silicone hoses. Temperature rated -60°C to +200°C. Available transparent and braided varieties.", image: subSiliconeHose },
+      { id: "1k", name: "SS/PTFE (Teflon) Hose Pipes with Fittings & Bellows", description: "Corrosion-resistant metallic hoses", details: "Stainless steel corrugated and PTFE-lined hoses with end fittings for chemical, pharmaceutical, and high-temperature applications. Expansion bellows also available.", image: subSsPtfeHose },
+      { id: "1l", name: "Hose Accessories and Fittings", description: "Clamps, couplings, adaptors", details: "Complete range of hose accessories including hose clamps, quick-release couplings, cam-lock fittings, and band-it clamps.", image: subHoseFittings },
     ],
   },
   {
@@ -110,9 +130,9 @@ export const productCategories: ProductCategory[] = [
       { label: "Standards", value: "ASME, DIN, BS, IS" },
     ],
     subcategories: [
-      { id: "3a", name: "Spiral Wound Gaskets", description: "For high-pressure flanged joints", details: "Available with inner and outer rings. Materials include SS304, SS316, graphite, and PTFE filler.", image: gasketsGallery1 },
-      { id: "3b", name: "Ring Joint Gaskets", description: "Metal-to-metal sealing", details: "Precision-machined RTJ gaskets in oval and octagonal profiles. Materials include SS, Inconel, and Monel.", image: gasketsGallery2 },
-      { id: "3c", name: "Non-Metallic Gaskets", description: "Sheet and cut gaskets", details: "Compressed fibre, rubber, PTFE, and graphite sheet gaskets. CNC-cut to any size and shape.", image: productGaskets },
+      { id: "3a", name: "Spiral Wound Gaskets", description: "For high-pressure flanged joints", details: "Available with inner and outer rings. Materials include SS304, SS316, graphite, and PTFE filler.", image: subSpiralGasket },
+      { id: "3b", name: "Ring Joint Gaskets", description: "Metal-to-metal sealing", details: "Precision-machined RTJ gaskets in oval and octagonal profiles. Materials include SS, Inconel, and Monel.", image: subRingGasket },
+      { id: "3c", name: "Non-Metallic Gaskets", description: "Sheet and cut gaskets", details: "Compressed fibre, rubber, PTFE, and graphite sheet gaskets. CNC-cut to any size and shape.", image: subNonmetalGasket },
     ],
   },
   {
@@ -133,9 +153,9 @@ export const productCategories: ProductCategory[] = [
       { label: "Tolerance", value: "As per ISO 3302 Class M2" },
     ],
     subcategories: [
-      { id: "2a", name: "O-Rings", description: "Standard and custom O-rings", details: "Available in all standard AS568 and metric sizes. Materials include NBR, FKM, EPDM, and silicone.", image: mouldingGallery1 },
-      { id: "2b", name: "Rubber Bushings", description: "Vibration isolation bushings", details: "Engineered for vibration dampening in machinery, automotive, and industrial equipment.", image: mouldingGallery2 },
-      { id: "2c", name: "Custom Mouldings", description: "Bespoke rubber components", details: "Custom-designed and manufactured to your exact specifications. From prototype to production runs.", image: productMoulding },
+      { id: "2a", name: "O-Rings", description: "Standard and custom O-rings", details: "Available in all standard AS568 and metric sizes. Materials include NBR, FKM, EPDM, and silicone.", image: subOrings },
+      { id: "2b", name: "Rubber Bushings", description: "Vibration isolation bushings", details: "Engineered for vibration dampening in machinery, automotive, and industrial equipment.", image: subBushings },
+      { id: "2c", name: "Custom Mouldings", description: "Bespoke rubber components", details: "Custom-designed and manufactured to your exact specifications. From prototype to production runs.", image: subCustomMoulding },
     ],
   },
 ];

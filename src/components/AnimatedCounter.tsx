@@ -10,14 +10,11 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter = ({ end, suffix = "", label, duration = 2 }: AnimatedCounterProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isInView) {
-      setCount(0);
-      return;
-    }
+    if (!isInView) return;
     let start = 0;
     const step = end / (duration * 60);
     const timer = setInterval(() => {
