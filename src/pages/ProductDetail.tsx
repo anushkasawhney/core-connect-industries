@@ -136,7 +136,7 @@ const ProductDetail = () => {
                 {/* Background image */}
                 <div className="absolute inset-0">
                   <img src={sub.image} alt={sub.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-navy-dark/80 group-hover:bg-navy-dark/70 transition-colors" />
+                  <div className="absolute inset-0 bg-navy-dark/50 group-hover:bg-navy-dark/40 transition-colors" />
                 </div>
                 <div className="relative p-5 flex flex-col justify-end min-h-[180px]">
                   <h4 className="font-heading font-semibold text-primary-foreground text-sm leading-tight">{sub.name}</h4>

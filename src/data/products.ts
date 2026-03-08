@@ -17,6 +17,20 @@ import industryChemical from "@/assets/industry-chemical.jpg";
 import industryOilgas from "@/assets/industry-oilgas.jpg";
 import industryAutomotive from "@/assets/industry-automotive.jpg";
 
+// Brand logos
+import brandKohinoor from "@/assets/brand-kohinoor.png";
+import brandDunlop from "@/assets/brand-dunlop.png";
+import brandGates from "@/assets/brand-gates.png";
+import brandIndoMakson from "@/assets/brand-indomakson.png";
+import brandManuli from "@/assets/brand-manuli.png";
+import brandDutron from "@/assets/brand-dutron.png";
+import brandFlowiron from "@/assets/brand-flowiron.png";
+import brandDuplon from "@/assets/brand-duplon.png";
+import brandKanaflex from "@/assets/brand-kanaflex.png";
+import brandGoodyear from "@/assets/brand-goodyear.png";
+import brandParker from "@/assets/brand-parker.png";
+import brandContinental from "@/assets/brand-continental.png";
+
 export interface ProductCategory {
   id: string;
   name: string;
@@ -42,7 +56,7 @@ export interface Brand {
   name: string;
   description: string;
   products: string;
-  logo?: string;
+  logo: string;
 }
 
 export const productCategories: ProductCategory[] = [
@@ -136,16 +150,16 @@ export const industries = [
 ];
 
 export const brands: Brand[] = [
-  { id: "kohinoor", name: "Kohinoor", description: "A trusted name in Indian industrial manufacturing, Kohinoor delivers high-quality rubber and polymer products meeting stringent industrial standards. Known for durability and performance across demanding applications.", products: "Industrial Hoses, Rubber Sheets, PVC Pipes" },
-  { id: "dunlop", name: "Dunlop", description: "Global leader in rubber technology with over a century of expertise. Dunlop manufactures premium conveyor belts, industrial hoses, and rubber products trusted by industries worldwide.", products: "Conveyor Belts, Industrial Hoses, Rubber Products" },
-  { id: "gates", name: "Gates", description: "World-renowned manufacturer of power transmission and fluid transfer solutions. Gates products are engineered for performance, reliability, and longevity in the toughest industrial environments.", products: "Hydraulic Hoses, Industrial Belts, Fluid Power Components" },
-  { id: "indo-makson", name: "Indo-Makson", description: "Specialist manufacturer of high-quality industrial hoses and rubber products for Indian industry. Indo-Makson combines quality materials with precision manufacturing.", products: "Industrial Hoses, Rubber Components, Flexible Connectors" },
-  { id: "manuli-hydraulics", name: "Manuli Hydraulics", description: "Italian engineering excellence in hydraulic hose systems. Manuli Hydraulics provides complete fluid conveyance solutions with superior pressure ratings and reliability.", products: "Hydraulic Hoses, Fittings, Hose Assemblies, Couplings" },
-  { id: "dutron", name: "Dutron", description: "India's leading manufacturer of PVC pressure pipes and fittings. Dutron products are ISI-marked and widely used in plumbing, irrigation, and industrial applications.", products: "PVC Pressure Pipes, PVC Fittings, CPVC Pipes" },
-  { id: "flowiron", name: "FLOWIRON", description: "Manufacturer of premium quality industrial flow products including valves, fittings, and pipe accessories. FLOWIRON products ensure reliable flow control in demanding environments.", products: "Valves, Pipe Fittings, Flow Control Products" },
-  { id: "duplon", name: "DUPLON", description: "Quality manufacturer of rubber and polymer products for diverse industrial applications. DUPLON delivers reliable components with consistent quality and performance.", products: "Rubber Sheets, Gaskets, Moulded Components" },
-  { id: "dutron-kanaflex", name: "Dutron Kanaflex", description: "Joint venture combining Dutron's market expertise with Kanaflex's Japanese technology. Produces high-quality flexible corrugated pipes and ducting solutions.", products: "Flexible Corrugated Pipes, Suction Hoses, Duct Hoses" },
-  { id: "goodyear", name: "GOOD YEAR", description: "Legendary brand in rubber technology, Goodyear's industrial division produces world-class hoses, belts, and rubber products engineered for maximum performance and service life.", products: "Industrial Hoses, Conveyor Belts, Rubber Products" },
-  { id: "parker", name: "Parker", description: "Global leader in motion and control technologies. Parker Hannifin delivers precision-engineered hydraulic hoses, fittings, and fluid conveyance solutions for critical applications.", products: "Hydraulic Hoses, Fittings, Seals, Filtration Systems" },
-  { id: "continental", name: "Continental", description: "German engineering excellence in rubber and polymer technology. Continental's industrial division supplies premium hoses, belts, and conveyor solutions to industries worldwide.", products: "Industrial Hoses, Conveyor Belts, Air Springs, Rubber Products" },
+  { id: "kohinoor", name: "Kohinoor", logo: brandKohinoor, description: "A trusted name in Indian industrial manufacturing, Kohinoor delivers high-quality rubber and polymer products meeting stringent industrial standards. Known for durability and performance across demanding applications.", products: "Industrial Hoses, Rubber Sheets, PVC Pipes" },
+  { id: "dunlop", name: "Dunlop", logo: brandDunlop, description: "Global leader in rubber technology with over a century of expertise. Dunlop manufactures premium conveyor belts, industrial hoses, and rubber products trusted by industries worldwide.", products: "Conveyor Belts, Industrial Hoses, Rubber Products" },
+  { id: "gates", name: "Gates", logo: brandGates, description: "World-renowned manufacturer of power transmission and fluid transfer solutions. Gates products are engineered for performance, reliability, and longevity in the toughest industrial environments.", products: "Hydraulic Hoses, Industrial Belts, Fluid Power Components" },
+  { id: "indo-makson", name: "Indo-Makson", logo: brandIndoMakson, description: "Specialist manufacturer of high-quality industrial hoses and rubber products for Indian industry. Indo-Makson combines quality materials with precision manufacturing.", products: "Industrial Hoses, Rubber Components, Flexible Connectors" },
+  { id: "manuli-hydraulics", name: "Manuli Hydraulics", logo: brandManuli, description: "Italian engineering excellence in hydraulic hose systems. Manuli Hydraulics provides complete fluid conveyance solutions with superior pressure ratings and reliability.", products: "Hydraulic Hoses, Fittings, Hose Assemblies, Couplings" },
+  { id: "dutron", name: "Dutron", logo: brandDutron, description: "India's leading manufacturer of PVC pressure pipes and fittings. Dutron products are ISI-marked and widely used in plumbing, irrigation, and industrial applications.", products: "PVC Pressure Pipes, PVC Fittings, CPVC Pipes" },
+  { id: "flowiron", name: "FLOWIRON", logo: brandFlowiron, description: "Manufacturer of premium quality industrial flow products including valves, fittings, and pipe accessories. FLOWIRON products ensure reliable flow control in demanding environments.", products: "Valves, Pipe Fittings, Flow Control Products" },
+  { id: "duplon", name: "DUPLON", logo: brandDuplon, description: "Quality manufacturer of rubber and polymer products for diverse industrial applications. DUPLON delivers reliable components with consistent quality and performance.", products: "Rubber Sheets, Gaskets, Moulded Components" },
+  { id: "dutron-kanaflex", name: "Dutron Kanaflex", logo: brandKanaflex, description: "Joint venture combining Dutron's market expertise with Kanaflex's Japanese technology. Produces high-quality flexible corrugated pipes and ducting solutions.", products: "Flexible Corrugated Pipes, Suction Hoses, Duct Hoses" },
+  { id: "goodyear", name: "GOOD YEAR", logo: brandGoodyear, description: "Legendary brand in rubber technology, Goodyear's industrial division produces world-class hoses, belts, and rubber products engineered for maximum performance and service life.", products: "Industrial Hoses, Conveyor Belts, Rubber Products" },
+  { id: "parker", name: "Parker", logo: brandParker, description: "Global leader in motion and control technologies. Parker Hannifin delivers precision-engineered hydraulic hoses, fittings, and fluid conveyance solutions for critical applications.", products: "Hydraulic Hoses, Fittings, Seals, Filtration Systems" },
+  { id: "continental", name: "Continental", logo: brandContinental, description: "German engineering excellence in rubber and polymer technology. Continental's industrial division supplies premium hoses, belts, and conveyor solutions to industries worldwide.", products: "Industrial Hoses, Conveyor Belts, Air Springs, Rubber Products" },
 ];
