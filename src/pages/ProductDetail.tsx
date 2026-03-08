@@ -1,18 +1,17 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { productCategories } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const ProductDetail = () => {
   const { slug } = useParams();
   const product = productCategories.find((p) => p.slug === slug);
   const [activeSub, setActiveSub] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Auto-rotate product images
   useEffect(() => {
@@ -30,16 +29,9 @@ const ProductDetail = () => {
     </main>
   );
 
-  const scrollSubcategories = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.offsetWidth * 0.8;
-      scrollRef.current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
     <main>
-      {/* Hero with animated background */}
+      {/* Hero */}
       <AnimatedHero
         image={product.images[0]}
         badge="Our Products"
@@ -50,7 +42,7 @@ const ProductDetail = () => {
       {/* Product Images + Name/Tagline */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Rotating images */}
+          {/* Rotating images with persistent name overlay */}
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden industrial-shadow">
             <AnimatePresence mode="wait">
               <motion.img
@@ -64,8 +56,14 @@ const ProductDetail = () => {
                 transition={{ duration: 0.6 }}
               />
             </AnimatePresence>
+            {/* Persistent product name overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground">{product.name}</h3>
+              <p className="text-primary-foreground/70 text-sm mt-1 italic">{product.tagline}</p>
+            </div>
             {/* Image dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div className="absolute top-4 right-4 flex gap-2">
               {product.images.map((_, i) => (
                 <button key={i} onClick={() => setCurrentImage(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentImage ? "bg-highlight" : "bg-primary-foreground/50"}`} />
               ))}
@@ -117,34 +115,35 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Subcategories with horizontal scroll */}
+      {/* Product Variants - Grid Layout */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading title="Product Variants" subtitle="Click on a category to view details." />
           
-          {/* Horizontal scrollable subcategories */}
-          <div className="relative">
-            <button onClick={() => scrollSubcategories("left")} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-accent transition-colors -ml-2">
-              <ChevronLeft size={18} className="text-foreground" />
-            </button>
-            <div ref={scrollRef} className="flex gap-4 overflow-x-auto scrollbar-hide px-6 py-2 scroll-smooth">
-              {product.subcategories.map((sub) => (
-                <motion.button
-                  key={sub.id}
-                  onClick={() => setActiveSub(activeSub === sub.id ? null : sub.id)}
-                  className={`flex-shrink-0 w-[calc(25%-12px)] min-w-[200px] p-4 rounded-lg border text-left transition-colors ${
-                    activeSub === sub.id ? "border-highlight bg-highlight/5" : "border-border hover:border-highlight/50 bg-card"
-                  }`}
-                  layout
-                >
-                  <h4 className="font-heading font-semibold text-foreground text-sm leading-tight">{sub.name}</h4>
-                  <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{sub.description}</p>
-                </motion.button>
-              ))}
-            </div>
-            <button onClick={() => scrollSubcategories("right")} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-accent transition-colors -mr-2">
-              <ChevronRight size={18} className="text-foreground" />
-            </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {product.subcategories.map((sub, i) => (
+              <motion.button
+                key={sub.id}
+                onClick={() => setActiveSub(activeSub === sub.id ? null : sub.id)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={`relative rounded-xl overflow-hidden group text-left transition-all min-h-[180px] ${
+                  activeSub === sub.id ? "ring-2 ring-highlight" : ""
+                }`}
+              >
+                {/* Background image */}
+                <div className="absolute inset-0">
+                  <img src={sub.image} alt={sub.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-navy-dark/80 group-hover:bg-navy-dark/70 transition-colors" />
+                </div>
+                <div className="relative p-5 flex flex-col justify-end min-h-[180px]">
+                  <h4 className="font-heading font-semibold text-primary-foreground text-sm leading-tight">{sub.name}</h4>
+                  <p className="text-xs text-primary-foreground/60 mt-1 line-clamp-2">{sub.description}</p>
+                </div>
+              </motion.button>
+            ))}
           </div>
 
           <AnimatePresence>
