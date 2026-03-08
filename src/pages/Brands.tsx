@@ -16,22 +16,22 @@ const Brands = () => (
     <section className="section-padding bg-background">
       <div className="container-wide mx-auto">
         <SectionHeading title="Brand Partners" subtitle="Click on a brand to learn more about their products and capabilities." />
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {brands.map((brand, i) => (
             <motion.div
               key={brand.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <Link to={`/brands/${brand.id}`} className="block glass-card hover-lift p-8 text-center">
-                <div className="w-20 h-20 mx-auto rounded-full gradient-navy flex items-center justify-center mb-4">
-                  <span className="font-heading font-bold text-primary-foreground text-xl">{brand.name.slice(0, 2)}</span>
+              <Link to={`/brands/${brand.id}`} className="block glass-card hover-lift p-6 text-center">
+                <div className="w-16 h-16 mx-auto rounded-full gradient-navy flex items-center justify-center mb-3">
+                  <span className="font-heading font-bold text-primary-foreground text-lg">{brand.name.slice(0, 2)}</span>
                 </div>
-                <h3 className="font-heading font-semibold text-foreground text-lg">{brand.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{brand.description.slice(0, 80)}...</p>
-                <span className="mt-3 inline-flex text-sm font-medium text-highlight">View Details →</span>
+                <h3 className="font-heading font-semibold text-foreground text-sm">{brand.name}</h3>
+                <p className="mt-1 text-xs text-muted-foreground line-clamp-2">{brand.description.slice(0, 60)}...</p>
+                <span className="mt-2 inline-flex text-xs font-medium text-highlight">View Details →</span>
               </Link>
             </motion.div>
           ))}

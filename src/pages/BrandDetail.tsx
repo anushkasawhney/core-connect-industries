@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { brands } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
+import AnimatedHero from "@/components/AnimatedHero";
+import heroBrands from "@/assets/hero-brands.jpg";
 import { ChevronRight } from "lucide-react";
 
 const BrandDetail = () => {
@@ -16,33 +18,35 @@ const BrandDetail = () => {
   );
 
   return (
-    <main className="pt-20">
-      <section className="section-padding gradient-navy">
-        <div className="container-wide mx-auto">
-          <div className="flex items-center gap-2 text-primary-foreground/50 text-sm mb-6">
-            <Link to="/" className="hover:text-primary-foreground">Home</Link>
-            <ChevronRight size={14} />
-            <Link to="/brands" className="hover:text-primary-foreground">Brands</Link>
-            <ChevronRight size={14} />
-            <span className="text-primary-foreground">{brand.name}</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="w-24 h-24 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0">
-              <span className="font-heading font-bold text-primary-foreground text-3xl">{brand.name.slice(0, 2)}</span>
-            </div>
-            <div>
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">{brand.name}</h1>
-              <p className="mt-2 text-primary-foreground/70">Authorized distributor</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <AnimatedHero
+        image={heroBrands}
+        badge="Authorized Distributor"
+        title={brand.name}
+        subtitle={`Trusted partner for premium industrial products.`}
+      />
 
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto max-w-3xl">
-          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">About {brand.name}</h2>
+          <div className="flex items-center gap-2 text-muted-foreground text-sm mb-6">
+            <Link to="/" className="hover:text-foreground">Home</Link>
+            <ChevronRight size={14} />
+            <Link to="/brands" className="hover:text-foreground">Brands</Link>
+            <ChevronRight size={14} />
+            <span className="text-foreground">{brand.name}</span>
+          </div>
+          <div className="flex items-center gap-6 mb-8">
+            <div className="w-20 h-20 rounded-xl gradient-navy flex items-center justify-center shrink-0">
+              <span className="font-heading font-bold text-primary-foreground text-2xl">{brand.name.slice(0, 2)}</span>
+            </div>
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-foreground">{brand.name}</h2>
+              <p className="text-sm text-muted-foreground">Authorized distributor</p>
+            </div>
+          </div>
+          <h3 className="font-heading text-lg font-bold text-foreground mb-3">About {brand.name}</h3>
           <p className="text-muted-foreground leading-relaxed mb-8">{brand.description}</p>
-          <h3 className="font-heading text-xl font-bold text-foreground mb-3">Products Supplied</h3>
+          <h3 className="font-heading text-lg font-bold text-foreground mb-3">Products Supplied</h3>
           <p className="text-muted-foreground">{brand.products}</p>
         </div>
       </section>
