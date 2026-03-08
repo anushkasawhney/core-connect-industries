@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Car } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
@@ -12,7 +13,7 @@ const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory,
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
+  viewport: { once: false, margin: "-80px" },
   transition: { duration: 0.5 },
 };
 
@@ -24,6 +25,43 @@ const timelineEvents = [
   { year: "2018", title: "1000+ Clients", desc: "Crossed 1000 active industrial clients." },
   { year: "2024", title: "40 Years of Excellence", desc: "Four decades of engineering trust." },
 ];
+
+const ProductImageRotator = ({ product }: { product: typeof productCategories[0] }) => {
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % product.images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [product.images.length]);
+
+  return (
+    <div className="aspect-[4/3] overflow-hidden relative rounded-t-lg">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={current}
+          src={product.images[current]}
+          alt={`${product.name} - Image ${current + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+      </AnimatePresence>
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 to-transparent pointer-events-none" />
+      <div className="absolute bottom-3 left-3 pointer-events-none">
+        <h3 className="font-heading font-semibold text-primary-foreground text-lg drop-shadow-lg">{product.name}</h3>
+      </div>
+      {/* Dots */}
+      <div className="absolute top-3 right-3 flex gap-1.5">
+        {product.images.map((_, i) => (
+          <span key={i} className={`w-2 h-2 rounded-full ${i === current ? "bg-highlight" : "bg-primary-foreground/50"}`} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Index = () => {
   return (
@@ -60,7 +98,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Product Categories with rotating images */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading title="Our Product Range" subtitle="Comprehensive range of industrial hoses, gaskets, and rubber moulding solutions." />
@@ -68,12 +106,9 @@ const Index = () => {
             {productCategories.map((cat, i) => (
               <motion.div key={cat.id} {...fadeUp} transition={{ duration: 0.5, delay: i * 0.1 }}>
                 <Link to={`/products/${cat.slug}`} className="block group glass-card hover-lift overflow-hidden">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  </div>
+                  <ProductImageRotator product={cat} />
                   <div className="p-5">
-                    <h3 className="font-heading font-semibold text-foreground text-lg">{cat.name}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{cat.description}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-2">{cat.description}</p>
                     <span className="mt-3 inline-flex text-sm font-medium text-highlight">Learn More →</span>
                   </div>
                 </Link>
@@ -88,8 +123,7 @@ const Index = () => {
         <div className="container-wide mx-auto">
           <SectionHeading title="Our Journey" subtitle="From a small trading firm to a pan-India industrial solutions provider." />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* 3D Animated Image */}
-            <motion.div className="relative rounded-xl overflow-hidden industrial-shadow aspect-[4/3]" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <motion.div className="relative rounded-xl overflow-hidden industrial-shadow aspect-[4/3]" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }} transition={{ duration: 0.7 }}>
               <motion.img src={journeyHero} alt="40 years of industrial heritage" className="w-full h-full object-cover" animate={{ scale: [1, 1.04, 1, 1.03, 1], rotateY: [0, 1.5, -1.5, 1, 0] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent" />
               <div className="absolute bottom-6 left-6">
@@ -97,10 +131,9 @@ const Index = () => {
                 <p className="text-primary-foreground/70 text-sm mt-1">Years of Excellence</p>
               </div>
             </motion.div>
-            {/* Timeline */}
             <div>
               {timelineEvents.map((event, i) => (
-                <motion.div key={event.year} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex gap-4 mb-6 last:mb-0">
+                <motion.div key={event.year} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex gap-4 mb-6 last:mb-0">
                   <div className="flex flex-col items-center">
                     <div className="w-10 h-10 rounded-full gradient-navy flex items-center justify-center shrink-0">
                       <span className="text-primary-foreground font-heading font-bold text-[10px]">{event.year}</span>
