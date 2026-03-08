@@ -22,12 +22,18 @@ const Brands = () => (
               key={brand.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
               <Link to={`/brands/${brand.id}`} className="block glass-card hover-lift p-6 text-center">
-                <div className="w-16 h-16 mx-auto rounded-full gradient-navy flex items-center justify-center mb-3">
-                  <span className="font-heading font-bold text-primary-foreground text-lg">{brand.name.slice(0, 2)}</span>
+                <div className="w-20 h-20 mx-auto rounded-xl bg-card flex items-center justify-center mb-3 overflow-hidden border border-border">
+                  <motion.img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="w-16 h-16 object-contain"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground text-sm">{brand.name}</h3>
                 <p className="mt-1 text-xs text-muted-foreground line-clamp-2">{brand.description.slice(0, 60)}...</p>
