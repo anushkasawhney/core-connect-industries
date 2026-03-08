@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-0.5 sm:gap-1 overflow-visible relative">
+        <div className="hidden lg:flex items-center gap-0.5 sm:gap-1 overflow-visible relative">
           <NavItem to="/" label="Home" active={isActive("/")} />
           <DropdownNav
             label="Products"
@@ -72,7 +72,7 @@ const Navbar = () => {
 
 
         {/* Mobile hamburger */}
-        <button className="md:hidden p-2 rounded-md hover:bg-accent transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="lg:hidden p-2 rounded-md hover:bg-accent transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
         </button>
       </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card border-t border-border overflow-hidden"
+            className="lg:hidden bg-card border-t border-border overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
               <MobileNavItem to="/" label="Home" active={isActive("/")} onClick={() => setMobileOpen(false)} />
