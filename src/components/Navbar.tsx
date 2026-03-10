@@ -78,13 +78,7 @@ const Navbar = () => {
                   </Link>
                 ))}
               </MobileDropdown>
-              <MobileDropdown label="Brands" active={location.pathname.startsWith("/brands")}>
-                {brands.map((brand) => (
-                  <Link key={brand.id} to={`/brands/${brand.id}`} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
-                    {brand.name}
-                  </Link>
-                ))}
-              </MobileDropdown>
+              <MobileNavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/industries" label="Industries" active={isActive("/industries")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/about" label="About" active={isActive("/about")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/contact" label="Contact" active={isActive("/contact")} onClick={() => setMobileOpen(false)} />
