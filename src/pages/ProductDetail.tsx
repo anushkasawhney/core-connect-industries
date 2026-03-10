@@ -7,13 +7,27 @@ import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 import { ChevronRight } from "lucide-react";
 
+const subcategoryGradients = [
+  "bg-gradient-to-br from-slate-800/70 via-zinc-700/50 to-gray-800/60",
+  "bg-gradient-to-br from-blue-900/70 via-cyan-800/50 to-sky-900/60",
+  "bg-gradient-to-br from-amber-900/70 via-orange-800/50 to-yellow-900/60",
+  "bg-gradient-to-br from-teal-900/70 via-emerald-800/50 to-cyan-900/60",
+  "bg-gradient-to-br from-indigo-900/70 via-blue-800/50 to-violet-900/60",
+  "bg-gradient-to-br from-red-900/70 via-rose-800/50 to-orange-900/60",
+  "bg-gradient-to-br from-green-900/70 via-emerald-800/50 to-lime-900/60",
+  "bg-gradient-to-br from-purple-900/70 via-violet-800/50 to-fuchsia-900/60",
+  "bg-gradient-to-br from-orange-900/70 via-red-800/50 to-amber-900/60",
+  "bg-gradient-to-br from-emerald-900/70 via-green-800/50 to-teal-900/60",
+  "bg-gradient-to-br from-cyan-900/70 via-blue-800/50 to-indigo-900/60",
+  "bg-gradient-to-br from-yellow-900/70 via-amber-800/50 to-orange-900/60",
+];
+
 const ProductDetail = () => {
   const { slug } = useParams();
   const product = productCategories.find((p) => p.slug === slug);
-  const [activeSub, setActiveSub] = useState<string | null>(null);
+  const [activeSub, setActiveSub] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Auto-rotate product images
   useEffect(() => {
     if (!product) return;
     const interval = setInterval(() => {
@@ -31,7 +45,6 @@ const ProductDetail = () => {
 
   return (
     <main>
-      {/* Hero */}
       <AnimatedHero
         image={product.images[0]}
         badge="Our Products"
@@ -42,7 +55,6 @@ const ProductDetail = () => {
       {/* Product Images + Name/Tagline */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Rotating images with persistent name overlay */}
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden industrial-shadow">
             <AnimatePresence mode="wait">
               <motion.img
@@ -56,13 +68,11 @@ const ProductDetail = () => {
                 transition={{ duration: 0.6 }}
               />
             </AnimatePresence>
-            {/* Persistent product name overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground">{product.name}</h3>
               <p className="text-primary-foreground/70 text-sm mt-1 italic">{product.tagline}</p>
             </div>
-            {/* Image dots */}
             <div className="absolute top-4 right-4 flex gap-2">
               {product.images.map((_, i) => (
                 <button key={i} onClick={() => setCurrentImage(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentImage ? "bg-highlight" : "bg-primary-foreground/50"}`} />
@@ -84,7 +94,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Technical Specifications with Drawing */}
+      {/* Technical Specifications */}
       <section className="section-padding bg-surface">
         <div className="container-wide mx-auto">
           <SectionHeading title="Technical Specifications" align="left" />
@@ -115,25 +125,87 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Product Variants - Grid Layout */}
+      {/* Product Variants - Industries-style expandable */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
-          <SectionHeading title="Product Variants" subtitle="Click on a category to view details." />
-          
+          <SectionHeading title="Product Variants" subtitle="Click on a category to view detailed information and applications." />
+
+          {/* Active Subcategory Detail */}
+          <AnimatePresence mode="wait">
+            {activeSub !== null && (() => {
+              const sub = product.subcategories[activeSub];
+              if (!sub) return null;
+              return (
+                <motion.div
+                  key={sub.id}
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="mb-8 overflow-hidden"
+                >
+                  <div className="relative rounded-xl overflow-hidden min-h-[380px]">
+                    <div className="absolute inset-0">
+                      <motion.img
+                        src={sub.image}
+                        alt={sub.name}
+                        className="w-full h-full object-cover"
+                        animate={{ scale: [1, 1.05, 1, 1.03, 1] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                      <div className={`absolute inset-0 ${subcategoryGradients[activeSub % subcategoryGradients.length]}`} />
+                    </div>
+                    <div className="relative p-8 md:p-12 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center min-h-[380px]">
+                      {/* Left: Name */}
+                      <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        <h3 className="font-heading font-bold text-primary-foreground text-2xl md:text-3xl leading-tight">{sub.name}</h3>
+                        <p className="mt-2 text-sm text-primary-foreground/60 italic">{sub.description}</p>
+                        <Link
+                          to="/contact"
+                          className="mt-5 inline-flex px-6 py-2.5 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+                        >
+                          Enquire Now
+                        </Link>
+                      </motion.div>
+                      {/* Right: Details + Applications */}
+                      <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        <p className="text-primary-foreground/90 leading-relaxed">{sub.details}</p>
+                        {sub.applications && (
+                          <div className="mt-5">
+                            <h4 className="text-sm font-heading font-semibold text-primary-foreground/70 uppercase tracking-wider mb-2">Applications</h4>
+                            <p className="text-primary-foreground/80 leading-relaxed">{sub.applications}</p>
+                          </div>
+                        )}
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
+          </AnimatePresence>
+
+          {/* Subcategory Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.subcategories.map((sub, i) => (
               <motion.button
                 key={sub.id}
-                onClick={() => setActiveSub(activeSub === sub.id ? null : sub.id)}
+                onClick={() => setActiveSub(activeSub === i ? null : i)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className={`relative rounded-xl overflow-hidden group text-left transition-all min-h-[180px] ${
-                  activeSub === sub.id ? "ring-2 ring-highlight" : ""
+                  activeSub === i ? "ring-2 ring-highlight" : ""
                 }`}
               >
-                {/* Background image */}
                 <div className="absolute inset-0">
                   <img src={sub.image} alt={sub.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-navy-dark/50 group-hover:bg-navy-dark/40 transition-colors" />
@@ -141,31 +213,13 @@ const ProductDetail = () => {
                 <div className="relative p-5 flex flex-col justify-end min-h-[180px]">
                   <h4 className="font-heading font-semibold text-primary-foreground text-sm leading-tight">{sub.name}</h4>
                   <p className="text-xs text-primary-foreground/60 mt-1 line-clamp-2">{sub.description}</p>
+                  <span className="mt-2 text-xs font-medium text-highlight">
+                    {activeSub === i ? "Close ×" : "View Details →"}
+                  </span>
                 </div>
               </motion.button>
             ))}
           </div>
-
-          <AnimatePresence>
-            {activeSub && (() => {
-              const sub = product.subcategories.find((s) => s.id === activeSub);
-              if (!sub) return null;
-              return (
-                <motion.div key={sub.id} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-6 overflow-hidden">
-                  <div className="glass-card p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <img src={sub.image} alt={sub.name} className="rounded-lg w-full h-64 object-cover" />
-                    <div>
-                      <h3 className="font-heading text-xl font-bold text-foreground">{sub.name}</h3>
-                      <p className="mt-3 text-muted-foreground leading-relaxed">{sub.details}</p>
-                      <Link to="/contact" className="inline-flex mt-4 px-6 py-2.5 rounded-md gradient-navy text-primary-foreground font-medium text-sm">
-                        Enquire Now
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })()}
-          </AnimatePresence>
         </div>
       </section>
 
