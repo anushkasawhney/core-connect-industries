@@ -145,7 +145,7 @@ const ProductDetail = () => {
                   className="mb-8 overflow-hidden"
                 >
                   <div className="relative rounded-xl overflow-hidden min-h-[380px]">
-                    <div className="absolute inset-0">
+                    <div className="absolute inset-0 w-full h-full">
                       <motion.img
                         src={sub.image}
                         alt={sub.name}
