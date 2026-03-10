@@ -45,24 +45,7 @@ const Navbar = () => {
               </Link>
             </div>
           </DropdownNav>
-          <DropdownNav
-            label="Brands"
-            active={location.pathname.startsWith("/brands")}
-            isOpen={activeDropdown === "brands"}
-            onOpen={() => setActiveDropdown("brands")}
-            onClose={() => setActiveDropdown(null)}
-          >
-            <div className="grid grid-cols-2 gap-1 p-2 min-w-[360px]">
-              {brands.map((brand) => (
-                <Link key={brand.id} to={`/brands/${brand.id}`} className="p-2 rounded-md hover:bg-accent transition-colors text-sm font-medium text-foreground" onClick={() => setActiveDropdown(null)}>
-                  {brand.name}
-                </Link>
-              ))}
-              <Link to="/brands" className="col-span-2 text-center p-2 text-sm font-medium text-highlight hover:underline" onClick={() => setActiveDropdown(null)}>
-                View All Brands →
-              </Link>
-            </div>
-          </DropdownNav>
+          <NavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} />
           <NavItem to="/industries" label="Industries" active={isActive("/industries")} />
           <NavItem to="/about" label="About" active={isActive("/about")} />
           <Link to="/contact" className="ml-2 px-5 py-2 rounded-md gradient-navy text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
