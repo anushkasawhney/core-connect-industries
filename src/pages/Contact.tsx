@@ -20,9 +20,10 @@ const Contact = () => (
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us</h2>
           <div className="space-y-6">
             {[
-              { icon: MapPin, title: "Office Address", lines: ["123 Industrial Area, Phase II", "Mumbai, Maharashtra 400001", "India"] },
+              { icon: MapPin, title: "Head Office", lines: ["4-3-82, First Floor, Hill Street", "Ranigunj, Secunderabad - 500003", "Telangana, India"] },
+              { icon: MapPin, title: "Branch Office", lines: ["H.No.7-109/1, Kompally", "Near Dhola-ri-Dhani / RCI Logistics", "Kompally Dundigal, Gandimaisamma (Mandal)", "Medchal District - 500100"] },
               { icon: Phone, title: "Phone", lines: ["+91 22 1234 5678", "+91 98765 43210"] },
-              { icon: Mail, title: "Email", lines: ["info@industrialengineering.com", "sales@industrialengineering.com"] },
+              { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
               { icon: Clock, title: "Business Hours", lines: ["Monday – Saturday: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
@@ -39,9 +40,38 @@ const Contact = () => (
             ))}
           </div>
 
-          {/* Map placeholder */}
-          <div className="mt-8 rounded-lg overflow-hidden border border-border h-64 bg-muted flex items-center justify-center">
-            <p className="text-muted-foreground text-sm">Google Maps integration available</p>
+          {/* Google Maps */}
+          <div className="mt-8 space-y-6">
+            <div>
+              <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Head Office — Ranigunj, Secunderabad</h4>
+              <div className="rounded-lg overflow-hidden border border-border h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.5!3d17.44!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1a1a1a1a1a%3A0x1a1a1a1a1a1a1a1a!2sHill%20Street%2C%20Ranigunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Head Office Location"
+                />
+              </div>
+            </div>
+            <div>
+              <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Branch Office — Kompally, Medchal</h4>
+              <div className="rounded-lg overflow-hidden border border-border h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.5!2d78.48!3d17.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1a1a1a1a1a%3A0x2a2a2a2a2a2a2a2a!2sKompally%2C%20Hyderabad%2C%20Telangana%20500100!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Branch Office Location"
+                />
+              </div>
+            </div>
           </div>
         </div>
 

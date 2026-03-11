@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { productCategories } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
@@ -27,6 +27,7 @@ const ProductDetail = () => {
   const product = productCategories.find((p) => p.slug === slug);
   const [activeSub, setActiveSub] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const detailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!product) return;
@@ -35,6 +36,16 @@ const ProductDetail = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [product]);
+
+  const handleSubClick = (i: number) => {
+    const newVal = activeSub === i ? null : i;
+    setActiveSub(newVal);
+    if (newVal !== null) {
+      setTimeout(() => {
+        detailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
+    }
+  };
 
   if (!product) return (
     <main className="pt-20 section-padding text-center">
@@ -125,79 +136,79 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Product Variants - Industries-style expandable */}
+      {/* Product Variants - expandable with scroll */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading title="Product Variants" subtitle="Click on a category to view detailed information and applications." />
 
           {/* Active Subcategory Detail */}
-          <AnimatePresence mode="wait">
-            {activeSub !== null && (() => {
-              const sub = product.subcategories[activeSub];
-              if (!sub) return null;
-              return (
-                <motion.div
-                  key={sub.id}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-8 overflow-hidden"
-                >
-                  <div className="relative rounded-xl overflow-hidden min-h-[380px]">
-                    <div className="absolute inset-0 w-full h-full">
-                      <motion.img
-                        src={sub.image}
-                        alt={sub.name}
-                        className="w-full h-full object-cover"
-                        animate={{ scale: [1, 1.05, 1, 1.03, 1] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                      <div className={`absolute inset-0 ${subcategoryGradients[activeSub % subcategoryGradients.length]}`} />
-                    </div>
-                    <div className="relative p-8 md:p-12 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center min-h-[380px]">
-                      {/* Left: Name */}
-                      <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                      >
-                        <h3 className="font-heading font-bold text-primary-foreground text-2xl md:text-3xl leading-tight">{sub.name}</h3>
-                        <p className="mt-2 text-sm text-primary-foreground/60 italic">{sub.description}</p>
-                        <Link
-                          to="/contact"
-                          className="mt-5 inline-flex px-6 py-2.5 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+          <div ref={detailRef}>
+            <AnimatePresence mode="wait">
+              {activeSub !== null && (() => {
+                const sub = product.subcategories[activeSub];
+                if (!sub) return null;
+                return (
+                  <motion.div
+                    key={sub.id}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-8 overflow-hidden"
+                  >
+                    <div className="relative rounded-xl overflow-hidden min-h-[380px]">
+                      <div className="absolute inset-0 w-full h-full">
+                        <motion.img
+                          src={sub.image}
+                          alt={sub.name}
+                          className="w-full h-full object-cover"
+                          animate={{ scale: [1, 1.05, 1, 1.03, 1] }}
+                          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                        <div className={`absolute inset-0 ${subcategoryGradients[activeSub % subcategoryGradients.length]}`} />
+                      </div>
+                      <div className="relative p-8 md:p-12 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center min-h-[380px]">
+                        <motion.div
+                          initial={{ opacity: 0, x: -40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                          Enquire Now
-                        </Link>
-                      </motion.div>
-                      {/* Right: Details + Applications */}
-                      <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                      >
-                        <p className="text-primary-foreground/90 leading-relaxed">{sub.details}</p>
-                        {sub.applications && (
-                          <div className="mt-5">
-                            <h4 className="text-sm font-heading font-semibold text-primary-foreground/70 uppercase tracking-wider mb-2">Applications</h4>
-                            <p className="text-primary-foreground/80 leading-relaxed">{sub.applications}</p>
-                          </div>
-                        )}
-                      </motion.div>
+                          <h3 className="font-heading font-bold text-primary-foreground text-2xl md:text-3xl leading-tight">{sub.name}</h3>
+                          <p className="mt-2 text-sm text-primary-foreground/60 italic">{sub.description}</p>
+                          <Link
+                            to="/contact"
+                            className="mt-5 inline-flex px-6 py-2.5 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+                          >
+                            Enquire Now
+                          </Link>
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, x: 40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          <p className="text-primary-foreground/90 leading-relaxed">{sub.details}</p>
+                          {sub.applications && (
+                            <div className="mt-5">
+                              <h4 className="text-sm font-heading font-semibold text-primary-foreground/70 uppercase tracking-wider mb-2">Applications</h4>
+                              <p className="text-primary-foreground/80 leading-relaxed">{sub.applications}</p>
+                            </div>
+                          )}
+                        </motion.div>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })()}
-          </AnimatePresence>
+                  </motion.div>
+                );
+              })()}
+            </AnimatePresence>
+          </div>
 
           {/* Subcategory Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.subcategories.map((sub, i) => (
               <motion.button
                 key={sub.id}
-                onClick={() => setActiveSub(activeSub === i ? null : i)}
+                onClick={() => handleSubClick(i)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
