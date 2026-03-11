@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { brands } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
+import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 import heroBrands from "@/assets/hero-brands.jpg";
 
@@ -23,6 +24,32 @@ const brandGradients = [
 
 const Brands = () => {
   const [activeBrand, setActiveBrand] = useState<number | null>(null);
+  const detailRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Handle hash-based navigation from other pages
+  useEffect(() => {
+    if (location.hash) {
+      const brandId = location.hash.replace("#", "");
+      const index = brands.findIndex((b) => b.id === brandId);
+      if (index !== -1) {
+        setActiveBrand(index);
+        setTimeout(() => {
+          detailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+      }
+    }
+  }, [location.hash]);
+
+  const handleBrandClick = (i: number) => {
+    const newVal = activeBrand === i ? null : i;
+    setActiveBrand(newVal);
+    if (newVal !== null) {
+      setTimeout(() => {
+        detailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
+    }
+  };
 
   return (
     <main>
@@ -37,80 +64,83 @@ const Brands = () => {
           <SectionHeading title="Brand Partners" subtitle="Click on a brand to learn more about their products and capabilities." />
 
           {/* Active Brand Detail */}
-          <AnimatePresence mode="wait">
-            {activeBrand !== null && (() => {
-              const brand = brands[activeBrand];
-              return (
-                <motion.div
-                  key={brand.id}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-10 overflow-hidden"
-                >
-                  <div className="relative rounded-xl overflow-hidden min-h-[420px]">
-                    <div className="absolute inset-0">
-                      <motion.img
-                        src={brand.backgroundImage}
-                        alt={brand.name}
-                        className="w-full h-full object-cover"
-                        animate={{ scale: [1, 1.05, 1, 1.03, 1] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                      <div className={`absolute inset-0 ${brandGradients[activeBrand % brandGradients.length]}`} />
-                    </div>
-                    <div className="relative p-8 md:p-12 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-center min-h-[420px]">
-                      {/* Left: Brand name + logo */}
-                      <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-col items-center md:items-start"
-                      >
-                        <div className={`w-28 h-28 rounded-2xl ${brand.bgColor} flex items-center justify-center mb-5 border border-primary-foreground/10 shadow-lg`}>
-                          <img src={brand.logo} alt={brand.name} className="w-22 h-22 object-contain" />
-                        </div>
-                        <h2 className="font-heading font-bold text-primary-foreground text-3xl md:text-4xl">{brand.name}</h2>
-                        <span className="mt-2 text-sm text-primary-foreground/60 font-medium">Authorized Distributor</span>
-                        <Link
-                          to={`/brands/${brand.id}`}
-                          className="mt-4 inline-flex px-6 py-2.5 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+          <div ref={detailRef}>
+            <AnimatePresence mode="wait">
+              {activeBrand !== null && (() => {
+                const brand = brands[activeBrand];
+                return (
+                  <motion.div
+                    key={brand.id}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-10 overflow-hidden"
+                  >
+                    <div className="relative rounded-xl overflow-hidden min-h-[420px]">
+                      <div className="absolute inset-0">
+                        <motion.img
+                          src={brand.backgroundImage}
+                          alt={brand.name}
+                          className="w-full h-full object-cover"
+                          animate={{ scale: [1, 1.05, 1, 1.03, 1] }}
+                          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                        <div className={`absolute inset-0 ${brandGradients[activeBrand % brandGradients.length]}`} />
+                      </div>
+                      <div className="relative p-8 md:p-12 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-center min-h-[420px]">
+                        <motion.div
+                          initial={{ opacity: 0, x: -40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.2 }}
+                          className="flex flex-col items-center md:items-start"
                         >
-                          View Full Profile →
-                        </Link>
-                      </motion.div>
-                      {/* Right: Info */}
-                      <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                      >
-                        <p className="text-primary-foreground/90 leading-relaxed text-base">{brand.description}</p>
-                        <div className="mt-6">
-                          <h4 className="text-sm font-heading font-semibold text-primary-foreground/70 uppercase tracking-wider mb-2">Products Supplied</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {brand.products.split(", ").map((product) => (
-                              <span key={product} className="px-3 py-1.5 rounded-full bg-primary-foreground/10 text-primary-foreground/80 text-xs font-medium border border-primary-foreground/10">
-                                {product}
-                              </span>
-                            ))}
+                          <div className={`w-28 h-28 rounded-2xl ${brand.bgColor} flex items-center justify-center mb-5 border border-primary-foreground/10 shadow-lg`}>
+                            <img src={brand.logo} alt={brand.name} className="w-22 h-22 object-contain" />
                           </div>
-                        </div>
-                      </motion.div>
+                          <h2 className="font-heading font-bold text-primary-foreground text-3xl md:text-4xl">{brand.name}</h2>
+                          <span className="mt-2 text-sm text-primary-foreground/60 font-medium">Authorized Distributor</span>
+                          <button
+                            onClick={() => {
+                              const enquirySection = document.getElementById("brand-enquiry");
+                              enquirySection?.scrollIntoView({ behavior: "smooth", block: "center" });
+                            }}
+                            className="mt-4 inline-flex px-6 py-2.5 rounded-md bg-highlight text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+                          >
+                            Enquire Now →
+                          </button>
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, x: 40 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          <p className="text-primary-foreground/90 leading-relaxed text-base">{brand.description}</p>
+                          <div className="mt-6">
+                            <h4 className="text-sm font-heading font-semibold text-primary-foreground/70 uppercase tracking-wider mb-2">Products Supplied</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {brand.products.split(", ").map((product) => (
+                                <span key={product} className="px-3 py-1.5 rounded-full bg-primary-foreground/10 text-primary-foreground/80 text-xs font-medium border border-primary-foreground/10">
+                                  {product}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })()}
-          </AnimatePresence>
+                  </motion.div>
+                );
+              })()}
+            </AnimatePresence>
+          </div>
 
           {/* Brand Logo Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {brands.map((brand, i) => (
               <motion.button
                 key={brand.id}
-                onClick={() => setActiveBrand(activeBrand === i ? null : i)}
+                onClick={() => handleBrandClick(i)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -135,6 +165,16 @@ const Brands = () => {
                 </span>
               </motion.button>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enquiry Section */}
+      <section id="brand-enquiry" className="section-padding bg-surface">
+        <div className="container-wide mx-auto max-w-3xl">
+          <SectionHeading title="Brand Enquiry" subtitle={activeBrand !== null ? `Interested in ${brands[activeBrand].name} products? Send us your requirements.` : "Interested in any of our brand products? Send us your requirements."} />
+          <div className="glass-card p-6 md:p-8">
+            <EnquiryForm productName={activeBrand !== null ? `${brands[activeBrand].name} Products` : undefined} />
           </div>
         </div>
       </section>

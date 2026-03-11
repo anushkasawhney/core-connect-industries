@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Car } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
-import { productCategories, industries } from "@/data/products";
+import { productCategories, industries, brands } from "@/data/products";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -53,7 +53,6 @@ const ProductImageRotator = ({ product }: { product: typeof productCategories[0]
       <div className="absolute bottom-3 left-3 pointer-events-none">
         <h3 className="font-heading font-semibold text-primary-foreground text-lg drop-shadow-lg">{product.name}</h3>
       </div>
-      {/* Dots */}
       <div className="absolute top-3 right-3 flex gap-1.5">
         {product.images.map((_, i) => (
           <span key={i} className={`w-2 h-2 rounded-full ${i === current ? "bg-highlight" : "bg-primary-foreground/50"}`} />
@@ -64,6 +63,8 @@ const ProductImageRotator = ({ product }: { product: typeof productCategories[0]
 };
 
 const Index = () => {
+  const brandsRef = useRef<HTMLDivElement>(null);
+
   return (
     <main>
       {/* Hero */}
@@ -76,7 +77,7 @@ const Index = () => {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-primary-foreground/20 text-primary-foreground/70 text-sm font-medium mb-6">40+ Years of Industrial Excellence</span>
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight max-w-4xl mx-auto">Engineering Industrial Flow Solutions</h1>
-            <p className="mt-6 text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">Trusted supplier of industrial hoses, rubber moulding and gasket solutions for over 40 years.</p>
+            <p className="mt-6 text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto">Trusted supplier of industrial hoses, rubber products and gasket solutions for over 40 years.</p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/products" className="px-8 py-4 rounded-md bg-highlight text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">View Products</Link>
               <Link to="/contact" className="px-8 py-4 rounded-md border border-primary-foreground/30 text-primary-foreground font-semibold text-sm hover:bg-primary-foreground/10 transition-colors">Request Quote</Link>
@@ -101,14 +102,14 @@ const Index = () => {
       {/* Product Categories with rotating images */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
-          <SectionHeading title="Our Product Range" subtitle="Comprehensive range of industrial hoses, gaskets, and rubber moulding solutions." />
+          <SectionHeading title="Our Product Range" subtitle="Comprehensive range of industrial hoses, gaskets, and rubber products." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {productCategories.map((cat, i) => (
               <motion.div key={cat.id} {...fadeUp} transition={{ duration: 0.5, delay: i * 0.1 }}>
                 <Link to={`/products/${cat.slug}`} className="block group glass-card hover-lift overflow-hidden">
                   <ProductImageRotator product={cat} />
                   <div className="p-5">
-                    <p className="text-sm text-muted-foreground line-clamp-2">{cat.description}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-3">{cat.description}</p>
                     <span className="mt-3 inline-flex text-sm font-medium text-highlight">Learn More →</span>
                   </div>
                 </Link>
@@ -159,21 +160,45 @@ const Index = () => {
             {industries.map((ind, i) => {
               const Icon = iconMap[ind.icon] || Factory;
               return (
-                <motion.div key={ind.name} {...fadeUp} transition={{ duration: 0.5, delay: i * 0.08 }} className="text-center group">
-                  <div className="w-16 h-16 mx-auto rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-highlight/20 transition-colors">
-                    <Icon size={28} className="text-primary-foreground/80" />
-                  </div>
-                  <h3 className="mt-3 font-heading font-semibold text-primary-foreground text-sm">{ind.name}</h3>
-                  <p className="mt-1 text-xs text-primary-foreground/50 hidden md:block">{ind.description}</p>
-                </motion.div>
+                <Link to="/industries" key={ind.name}>
+                  <motion.div {...fadeUp} transition={{ duration: 0.5, delay: i * 0.08 }} className="text-center group cursor-pointer">
+                    <div className="w-16 h-16 mx-auto rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-highlight/20 transition-colors">
+                      <Icon size={28} className="text-primary-foreground/80" />
+                    </div>
+                    <h3 className="mt-3 font-heading font-semibold text-primary-foreground text-sm">{ind.name}</h3>
+                    <p className="mt-1 text-xs text-primary-foreground/50 hidden md:block">{ind.description}</p>
+                  </motion.div>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
 
+      {/* Brands - Clickable icons linking to brands page */}
+      <section className="section-padding bg-background" ref={brandsRef}>
+        <div className="container-wide mx-auto">
+          <SectionHeading title="Our Brand Partners" subtitle="Authorized distributors of leading global and domestic industrial brands." />
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+            {brands.map((brand, i) => (
+              <motion.div key={brand.id} {...fadeUp} transition={{ duration: 0.4, delay: i * 0.05 }}>
+                <Link
+                  to={`/brands#${brand.id}`}
+                  className="block glass-card hover-lift p-4 text-center group"
+                >
+                  <div className={`w-16 h-16 mx-auto rounded-xl ${brand.bgColor} flex items-center justify-center mb-2 border border-border shadow-sm`}>
+                    <img src={brand.logo} alt={brand.name} className="w-12 h-12 object-contain" />
+                  </div>
+                  <h4 className="font-heading font-semibold text-foreground text-xs">{brand.name}</h4>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-surface">
         <div className="container-wide mx-auto">
           <SectionHeading title="Why Choose Us" subtitle="Four decades of trust, expertise, and engineering excellence." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

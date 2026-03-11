@@ -18,10 +18,9 @@ const BrandDetail = () => {
 
   return (
     <main>
-      {/* Hero with animated brand logo as background */}
+      {/* Hero */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden pt-14">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-accent">
-          {/* Animated floating logos pattern */}
           {[...Array(6)].map((_, i) => (
             <motion.img
               key={i}

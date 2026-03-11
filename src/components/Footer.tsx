@@ -15,7 +15,7 @@ const Footer = () => (
             </div>
           </div>
           <p className="text-primary-foreground/70 text-xs leading-relaxed">
-            Trusted supplier of industrial hoses, rubber moulding components, gaskets, and sealing solutions for over 40 years.
+            Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
           </p>
         </div>
         <div>
@@ -37,7 +37,14 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <ul className="space-y-2 text-xs text-primary-foreground/70">
-            <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 shrink-0" /> 123 Industrial Area, Phase II, Mumbai 400001</li>
+            <li className="flex items-start gap-2">
+              <MapPin size={14} className="mt-0.5 shrink-0" />
+              <span>4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <MapPin size={14} className="mt-0.5 shrink-0" />
+              <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
+            </li>
             <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 22 1234 5678</li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
           </ul>
