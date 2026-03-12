@@ -5,6 +5,11 @@ import companyLogo from "@/assets/company-logo.png";
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+FIRST+FLOOR+HILL+STREET+RANIGUNJ+SECUNDERABAD+500003";
 const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=H.No.7-109%2F1+Kompally+Near+Dhola-ri-Dhani+RCI+Logistics+Kompally+Dundigal+Gandimaisamma+Mandal+Medchal+District+500100";
 
+const openMap = (url: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
