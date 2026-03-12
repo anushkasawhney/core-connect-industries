@@ -38,9 +38,9 @@ const Contact = () => (
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 hover:bg-highlight/20 transition-colors">
+              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 hover:bg-highlight/20 transition-colors cursor-pointer">
                 <MapPin size={18} className="text-highlight" />
-              </a>
+              </button>
               <div>
                 <h4 className="font-heading font-semibold text-foreground text-sm">Branch Office</h4>
                 <p className="text-sm text-muted-foreground">H.No.7-109/1, Kompally</p>
