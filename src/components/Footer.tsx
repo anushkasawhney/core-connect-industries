@@ -5,6 +5,11 @@ import companyLogo from "@/assets/company-logo.png";
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+FIRST+FLOOR+HILL+STREET+RANIGUNJ+SECUNDERABAD+500003";
 const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=H.No.7-109%2F1+Kompally+Near+Dhola-ri-Dhani+RCI+Logistics+Kompally+Dundigal+Gandimaisamma+Mandal+Medchal+District+500100";
 
+const openMap = (url: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
@@ -41,15 +46,15 @@ const Footer = () => (
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <ul className="space-y-2 text-xs text-primary-foreground/70">
             <li className="flex items-start gap-2">
-              <a href={HEAD_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="mt-0.5 shrink-0 hover:text-highlight transition-colors">
+              <button onClick={openMap(HEAD_OFFICE_MAP)} className="mt-0.5 shrink-0 hover:text-highlight transition-colors cursor-pointer">
                 <MapPin size={14} />
-              </a>
+              </button>
               <span>4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
             </li>
             <li className="flex items-start gap-2">
-              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="mt-0.5 shrink-0 hover:text-highlight transition-colors">
+              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="mt-0.5 shrink-0 hover:text-highlight transition-colors cursor-pointer">
                 <MapPin size={14} />
-              </a>
+              </button>
               <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
             </li>
             <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 22 1234 5678</li>

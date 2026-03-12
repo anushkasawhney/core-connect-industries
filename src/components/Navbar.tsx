@@ -81,7 +81,6 @@ const Navbar = () => {
               <MobileNavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/industries" label="Industries" active={isActive("/industries")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/about" label="About" active={isActive("/about")} onClick={() => setMobileOpen(false)} />
-              <MobileNavItem to="/contact" label="Contact" active={isActive("/contact")} onClick={() => setMobileOpen(false)} />
               <Link to="/contact" className="block mt-3 px-4 py-3 rounded-md gradient-navy text-primary-foreground font-medium text-sm text-center" onClick={() => setMobileOpen(false)}>
                 Request Quote
               </Link>
