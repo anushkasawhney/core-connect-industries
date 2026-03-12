@@ -84,9 +84,9 @@ const Contact = () => (
                   title="Head Office Location"
                 />
               </div>
-              <a href={HEAD_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors">
+              <button onClick={openMap(HEAD_OFFICE_MAP)} className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors cursor-pointer">
                 <MapPin size={14} /> Open in Google Maps
-              </a>
+              </button>
             </div>
             <div>
               <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Branch Office — Kompally, Medchal</h4>
