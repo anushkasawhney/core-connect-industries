@@ -52,9 +52,9 @@ const Footer = () => (
               <span>4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
             </li>
             <li className="flex items-start gap-2">
-              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="mt-0.5 shrink-0 hover:text-highlight transition-colors">
+              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="mt-0.5 shrink-0 hover:text-highlight transition-colors cursor-pointer">
                 <MapPin size={14} />
-              </a>
+              </button>
               <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
             </li>
             <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 22 1234 5678</li>

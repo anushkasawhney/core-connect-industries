@@ -102,9 +102,9 @@ const Contact = () => (
                   title="Branch Office Location"
                 />
               </div>
-              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors">
+              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors cursor-pointer">
                 <MapPin size={14} /> Open in Google Maps
-              </a>
+              </button>
             </div>
           </div>
         </div>
