@@ -69,7 +69,7 @@ const Contact = () => (
               <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Head Office — Ranigunj, Secunderabad</h4>
               <div className="rounded-lg overflow-hidden border border-border h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.4983!3d17.4399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a21bfffffff%3A0x1234567890abcdef!2sHill%20Street%2C%20Ranigunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2563564!2d78.498317!3d17.439917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99d638a6e2d5%3A0x5b31f30b8e7e2b89!2sHill%20Street%2C%20Ranigunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -79,12 +79,15 @@ const Contact = () => (
                   title="Head Office Location"
                 />
               </div>
+              <a href={HEAD_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors">
+                <MapPin size={14} /> Open in Google Maps
+              </a>
             </div>
             <div>
               <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Branch Office — Kompally, Medchal</h4>
               <div className="rounded-lg overflow-hidden border border-border h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.5!2d78.4876!3d17.5234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a22ffffffff%3A0xfedcba0987654321!2sKompally%2C%20Hyderabad%2C%20Telangana%20500100!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.5!2d78.4876!3d17.5234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f5e2c3a8cf%3A0x4d1f73cb9a2eab1e!2sKompally%2C%20Hyderabad%2C%20Telangana%20500100!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -94,6 +97,9 @@ const Contact = () => (
                   title="Branch Office Location"
                 />
               </div>
+              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors">
+                <MapPin size={14} /> Open in Google Maps
+              </a>
             </div>
           </div>
         </div>
