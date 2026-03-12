@@ -4,8 +4,8 @@ import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 
-const HEAD_OFFICE_MAP = "https://maps.app.goo.gl/eK1AxJAGvXwEWZSM8?g_st=aw";
-const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/CsVDrGLFCGBMjX836?g_st=aw";
+const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+FIRST+FLOOR+HILL+STREET+RANIGUNJ+SECUNDERABAD+500003";
+const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=H.No.7-109%2F1+Kompally+Near+Dhola-ri-Dhani+RCI+Logistics+Kompally+Dundigal+Gandimaisamma+Mandal+Medchal+District+500100";
 
 const Contact = () => (
   <main>
