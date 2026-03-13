@@ -4,13 +4,8 @@ import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 
-const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+FIRST+FLOOR+HILL+STREET+RANIGUNJ+SECUNDERABAD+500003";
-const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=H.No.7-109%2F1+Kompally+Near+Dhola-ri-Dhani+RCI+Logistics+Kompally+Dundigal+Gandimaisamma+Mandal+Medchal+District+500100";
-
-const openMap = (url: string) => (e: React.MouseEvent) => {
-  e.preventDefault();
-  window.open(url, '_blank', 'noopener,noreferrer');
-};
+const HEAD_OFFICE_MAP = "https://maps.app.goo.gl/DLyN9juvoseWRfyL8";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/AGEWnpwXnaZ2cxqt8";
 
 const Contact = () => (
   <main>
@@ -26,21 +21,31 @@ const Contact = () => (
         <div>
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us</h2>
           <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <button onClick={openMap(HEAD_OFFICE_MAP)} className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 hover:bg-highlight/20 transition-colors cursor-pointer">
+            <a
+              href={HEAD_OFFICE_MAP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <span className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 group-hover:bg-highlight/20 transition-colors">
                 <MapPin size={18} className="text-highlight" />
-              </button>
+              </span>
               <div>
                 <h4 className="font-heading font-semibold text-foreground text-sm">Head Office</h4>
                 <p className="text-sm text-muted-foreground">4-3-82, First Floor, Hill Street</p>
                 <p className="text-sm text-muted-foreground">Ranigunj, Secunderabad - 500003</p>
                 <p className="text-sm text-muted-foreground">Telangana, India</p>
               </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 hover:bg-highlight/20 transition-colors cursor-pointer">
+            </a>
+            <a
+              href={BRANCH_OFFICE_MAP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
+            >
+              <span className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0 group-hover:bg-highlight/20 transition-colors">
                 <MapPin size={18} className="text-highlight" />
-              </button>
+              </span>
               <div>
                 <h4 className="font-heading font-semibold text-foreground text-sm">Branch Office</h4>
                 <p className="text-sm text-muted-foreground">H.No.7-109/1, Kompally</p>
@@ -48,7 +53,7 @@ const Contact = () => (
                 <p className="text-sm text-muted-foreground">Kompally Dundigal, Gandimaisamma (Mandal)</p>
                 <p className="text-sm text-muted-foreground">Medchal District - 500100</p>
               </div>
-            </div>
+            </a>
             {[
               { icon: Phone, title: "Phone", lines: ["+91 22 1234 5678", "+91 98765 43210"] },
               { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
@@ -84,9 +89,14 @@ const Contact = () => (
                   title="Head Office Location"
                 />
               </div>
-              <button onClick={openMap(HEAD_OFFICE_MAP)} className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors cursor-pointer">
+              <a
+                href={HEAD_OFFICE_MAP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors"
+              >
                 <MapPin size={14} /> Open in Google Maps
-              </button>
+              </a>
             </div>
             <div>
               <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Branch Office — Kompally, Medchal</h4>
@@ -102,9 +112,14 @@ const Contact = () => (
                   title="Branch Office Location"
                 />
               </div>
-              <button onClick={openMap(BRANCH_OFFICE_MAP)} className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors cursor-pointer">
+              <a
+                href={BRANCH_OFFICE_MAP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors"
+              >
                 <MapPin size={14} /> Open in Google Maps
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -121,3 +136,4 @@ const Contact = () => (
 );
 
 export default Contact;
+
