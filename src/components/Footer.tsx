@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import companyLogo from "@/assets/company-logo.png";
 
-const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82%2C+First+Floor%2C+Hill+Street%2C+Ranigunj%2C+Secunderabad%2C+Telangana+500003";
-const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=H.No.7-109%2F1%2C+Kompally%2C+Near+Dhola-ri-Dhani+%2F+RCI+Logistics%2C+Kompally+Dundigal%2C+Gandimaisamma+Mandal%2C+Medchal+District%2C+Telangana+500100";
+const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
+const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Kompally+Hyderabad+Telangana";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
