@@ -204,7 +204,7 @@ const Index = () => {
             {[
               { icon: Shield, title: "40+ Years Expertise", desc: "Decades of deep industry knowledge and technical understanding." },
               { icon: Package, title: "Large & Diverse Product Portfolio", desc: "Extensive range of products ready for immediate dispatch." },
-              { icon: Lightbulb, title: "Technical Knowledge", desc: "Expert product selection guidance for your application." },
+              { icon: Lightbulb, title: "Trusted Partner for Industries", desc: "Reliable solutions for pharmaceutical, steel and heavy industries." },
               { icon: Truck, title: "Reliable Supply Chain", desc: "Pan-India distribution network ensuring on-time delivery." },
               { icon: IndianRupee, title: "Competitive Pricing", desc: "Best value through strong manufacturer partnerships." },
               { icon: Handshake, title: "Supplier Network", desc: "Partnerships with leading global and domestic manufacturers." },
