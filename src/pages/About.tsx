@@ -21,7 +21,7 @@ const About = () => (
     <section className="section-padding bg-card">
       <div className="container-wide mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         <AnimatedCounter end={40} suffix="+" label="Years Experience" />
-        <AnimatedCounter end={1000} suffix="+" label="Clients Served" />
+        <AnimatedCounter end={500} suffix="+" label="Clients Served" />
         <AnimatedCounter end={500} suffix="+" label="Products" />
         <AnimatedCounter end={28} suffix="" label="States" />
       </div>
