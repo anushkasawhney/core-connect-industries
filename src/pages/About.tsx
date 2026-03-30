@@ -82,9 +82,9 @@ const About = () => (
         <SectionHeading title="Quality Commitment" subtitle="Our unwavering commitment to quality drives everything we do." />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { icon: Award, title: "ISO 9001 Certified", desc: "Our quality management system meets international standards." },
-            { icon: Building2, title: "Modern Infrastructure", desc: "State-of-the-art warehousing and testing facilities." },
-            { icon: Users, title: "Expert Team", desc: "Experienced engineers and product specialists at your service." },
+            { icon: Award, title: "40+ Years Experience", desc: "Four decades of deep industry knowledge and trusted partnerships." },
+            { icon: Package, title: "Large & Diverse Product Catalogue", desc: "Comprehensive range of hoses, gaskets, and rubber products." },
+            { icon: Handshake, title: "Trusted Partner for Industries", desc: "Reliable solutions for pharmaceutical, steel and heavy industries." },
           ].map((item, i) => (
             <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card hover-lift p-6 text-center">
               <div className="w-14 h-14 mx-auto rounded-xl bg-highlight/10 flex items-center justify-center mb-4">
