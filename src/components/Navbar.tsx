@@ -17,11 +17,8 @@ const Navbar = () => {
       <div className="container-wide mx-auto flex items-center justify-between h-14 md:h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={companyLogo} alt="Dupon Industrial Enterprises logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" />
-          <div className="hidden sm:block">
-            <span className="font-heading font-bold text-foreground text-lg leading-tight block">Dupon Industrial</span>
-            <span className="text-xs text-muted-foreground tracking-widest uppercase">Enterprises</span>
-          </div>
+          <img src={companyLogo} alt="Dupon Industrial Enterprises logo" className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover" />
+          <span className="hidden sm:block font-heading font-bold text-foreground text-base leading-tight whitespace-nowrap">Dupon Industrial Enterprises</span>
         </Link>
 
         {/* Desktop Nav */}
