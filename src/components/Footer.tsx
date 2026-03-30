@@ -62,7 +62,7 @@ const Footer = () => (
                 <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
               </a>
             </li>
-            <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 22 1234 5678</li>
+            <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 98480 18090 / +91 81798 25090</li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
           </ul>
         </div>
