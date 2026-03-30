@@ -9,9 +9,8 @@ import { Eye, Target, Award, Package, Handshake } from "lucide-react";
 const timelineEvents = [
   { year: "1984", title: "Company Founded", desc: "Started as a small trading firm supplying industrial rubber products." },
   { year: "1995", title: "Expanded Product Range", desc: "Added industrial hoses and gasket solutions to the product portfolio." },
-  { year: "2005", title: "Pan-India Operations", desc: "Established distribution network across 15+ states." },
-  { year: "2012", title: "Quality Certifications", desc: "Achieved ISO 9001 certification for quality management systems." },
-  { year: "2018", title: "1000+ Client Milestone", desc: "Crossed 1000 active industrial clients across diverse sectors." },
+  { year: "2005", title: "Pan-India Operations", desc: "Established pan-India distribution network." },
+  { year: "2018", title: "Trusted Industry Supplier", desc: "Became a trusted supplier for pharmaceutical, steel and heavy industries." },
   { year: "2024", title: "40 Years of Excellence", desc: "Celebrating four decades of engineering trust and reliability." },
 ];
 
