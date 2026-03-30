@@ -5,7 +5,7 @@ import { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill } from "lucid
 import AnimatedHero from "@/components/AnimatedHero";
 import heroIndustries from "@/assets/hero-industries.jpg";
 
-const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car };
+const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill };
 
 const industryGradients = [
   "bg-gradient-to-br from-amber-900/60 via-orange-800/40 to-yellow-900/50",
