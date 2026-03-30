@@ -47,7 +47,7 @@ const Navbar = () => {
           </DropdownNav>
           <NavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} />
           <NavItem to="/industries" label="Industries" active={isActive("/industries")} />
-          <NavItem to="/about" label="About" active={isActive("/about")} />
+          <NavItem to="/about" label="About Us" active={isActive("/about")} />
           <Link to="/contact" className="ml-2 px-5 py-2 rounded-md gradient-navy text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
             Request Quote
           </Link>
