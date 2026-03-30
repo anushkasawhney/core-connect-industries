@@ -92,7 +92,7 @@ const Index = () => {
       <section className="section-padding bg-card">
         <div className="container-wide mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <AnimatedCounter end={40} suffix="+" label="Years Industry Experience" />
-          <AnimatedCounter end={1000} suffix="+" label="Industrial Clients" />
+          <AnimatedCounter end={500} suffix="+" label="Industrial Clients" />
           <AnimatedCounter end={500} suffix="+" label="Product Variants" />
           <AnimatedCounter end={28} suffix="" label="States Supplied" />
         </div>
