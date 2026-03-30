@@ -32,7 +32,7 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-3">Products</h4>
           <ul className="space-y-1.5 text-xs text-primary-foreground/70">
-            {["Industrial Hose and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
+            {["Industrial Hoses and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
               <li key={p}><Link to="/products" className="hover:text-primary-foreground transition-colors">{p}</Link></li>
             ))}
           </ul>
