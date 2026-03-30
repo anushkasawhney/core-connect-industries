@@ -117,7 +117,7 @@ export interface Industry {
 export const productCategories: ProductCategory[] = [
   {
     id: "1",
-    name: "Industrial Hose and Pipes",
+    name: "Industrial Hoses and Pipes",
     slug: "industrial-hose-pipes",
     image: productHoses,
     images: [productHoses, hosesGallery1, hosesGallery2],
