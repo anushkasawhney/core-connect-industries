@@ -17,11 +17,8 @@ const Navbar = () => {
       <div className="container-wide mx-auto flex items-center justify-between h-14 md:h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={companyLogo} alt="Dupon Industrial Enterprises logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover" />
-          <div className="hidden sm:block">
-            <span className="font-heading font-bold text-foreground text-lg leading-tight block">Dupon Industrial</span>
-            <span className="text-xs text-muted-foreground tracking-widest uppercase">Enterprises</span>
-          </div>
+          <img src={companyLogo} alt="Dupon Industrial Enterprises logo" className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover" />
+          <span className="hidden sm:block font-heading font-bold text-foreground text-base leading-tight whitespace-nowrap">Dupon Industrial Enterprises</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -47,7 +44,7 @@ const Navbar = () => {
           </DropdownNav>
           <NavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} />
           <NavItem to="/industries" label="Industries" active={isActive("/industries")} />
-          <NavItem to="/about" label="About" active={isActive("/about")} />
+          <NavItem to="/about" label="About Us" active={isActive("/about")} />
           <Link to="/contact" className="ml-2 px-5 py-2 rounded-md gradient-navy text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
             Request Quote
           </Link>
@@ -80,7 +77,7 @@ const Navbar = () => {
               </MobileDropdown>
               <MobileNavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/industries" label="Industries" active={isActive("/industries")} onClick={() => setMobileOpen(false)} />
-              <MobileNavItem to="/about" label="About" active={isActive("/about")} onClick={() => setMobileOpen(false)} />
+              <MobileNavItem to="/about" label="About Us" active={isActive("/about")} onClick={() => setMobileOpen(false)} />
               <Link to="/contact" className="block mt-3 px-4 py-3 rounded-md gradient-navy text-primary-foreground font-medium text-sm text-center" onClick={() => setMobileOpen(false)}>
                 Request Quote
               </Link>

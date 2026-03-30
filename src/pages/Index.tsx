@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Car } from "lucide-react";
+import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
 import { productCategories, industries, brands } from "@/data/products";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionHeading from "@/components/SectionHeading";
 
-const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car };
+const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill };
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -20,9 +20,8 @@ const fadeUp = {
 const timelineEvents = [
   { year: "1984", title: "Company Founded", desc: "Started as a small trading firm supplying industrial rubber products." },
   { year: "1995", title: "Expanded Product Range", desc: "Added industrial hoses and gasket solutions to the portfolio." },
-  { year: "2005", title: "Pan-India Operations", desc: "Established distribution network across 15+ states." },
-  { year: "2012", title: "Quality Certifications", desc: "Achieved ISO 9001 certification." },
-  { year: "2018", title: "1000+ Clients", desc: "Crossed 1000 active industrial clients." },
+  { year: "2005", title: "Pan-India Operations", desc: "Established pan-India distribution network." },
+  { year: "2018", title: "Trusted Industry Supplier", desc: "Became a trusted supplier for pharmaceutical, steel and heavy industries." },
   { year: "2024", title: "40 Years of Excellence", desc: "Four decades of engineering trust." },
 ];
 
@@ -93,7 +92,7 @@ const Index = () => {
       <section className="section-padding bg-card">
         <div className="container-wide mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <AnimatedCounter end={40} suffix="+" label="Years Industry Experience" />
-          <AnimatedCounter end={1000} suffix="+" label="Industrial Clients" />
+          <AnimatedCounter end={500} suffix="+" label="Industrial Clients" />
           <AnimatedCounter end={500} suffix="+" label="Product Variants" />
           <AnimatedCounter end={28} suffix="" label="States Supplied" />
         </div>
@@ -156,7 +155,7 @@ const Index = () => {
       <section className="section-padding gradient-navy">
         <div className="container-wide mx-auto">
           <SectionHeading title="Industries We Serve" subtitle="Delivering engineered solutions across diverse industrial sectors." light />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto justify-items-center">
             {industries.map((ind, i) => {
               const Icon = iconMap[ind.icon] || Factory;
               return (
@@ -204,8 +203,8 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Shield, title: "40+ Years Expertise", desc: "Decades of deep industry knowledge and technical understanding." },
-              { icon: Package, title: "Large Inventory", desc: "Extensive stock of products ready for immediate dispatch." },
-              { icon: Lightbulb, title: "Technical Knowledge", desc: "Expert product selection guidance for your application." },
+              { icon: Package, title: "Large & Diverse Product Portfolio", desc: "Extensive range of products ready for immediate dispatch." },
+              { icon: Lightbulb, title: "Trusted Partner for Industries", desc: "Reliable solutions for pharmaceutical, steel and heavy industries." },
               { icon: Truck, title: "Reliable Supply Chain", desc: "Pan-India distribution network ensuring on-time delivery." },
               { icon: IndianRupee, title: "Competitive Pricing", desc: "Best value through strong manufacturer partnerships." },
               { icon: Handshake, title: "Supplier Network", desc: "Partnerships with leading global and domestic manufacturers." },

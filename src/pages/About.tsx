@@ -4,14 +4,13 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import AnimatedHero from "@/components/AnimatedHero";
 import heroAbout from "@/assets/hero-about.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
-import { Eye, Target, Award, Building2, Users } from "lucide-react";
+import { Eye, Target, Award, Package, Handshake } from "lucide-react";
 
 const timelineEvents = [
   { year: "1984", title: "Company Founded", desc: "Started as a small trading firm supplying industrial rubber products." },
   { year: "1995", title: "Expanded Product Range", desc: "Added industrial hoses and gasket solutions to the product portfolio." },
-  { year: "2005", title: "Pan-India Operations", desc: "Established distribution network across 15+ states." },
-  { year: "2012", title: "Quality Certifications", desc: "Achieved ISO 9001 certification for quality management systems." },
-  { year: "2018", title: "1000+ Client Milestone", desc: "Crossed 1000 active industrial clients across diverse sectors." },
+  { year: "2005", title: "Pan-India Operations", desc: "Established pan-India distribution network." },
+  { year: "2018", title: "Trusted Industry Supplier", desc: "Became a trusted supplier for pharmaceutical, steel and heavy industries." },
   { year: "2024", title: "40 Years of Excellence", desc: "Celebrating four decades of engineering trust and reliability." },
 ];
 
@@ -22,7 +21,7 @@ const About = () => (
     <section className="section-padding bg-card">
       <div className="container-wide mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         <AnimatedCounter end={40} suffix="+" label="Years Experience" />
-        <AnimatedCounter end={1000} suffix="+" label="Clients Served" />
+        <AnimatedCounter end={500} suffix="+" label="Clients Served" />
         <AnimatedCounter end={500} suffix="+" label="Products" />
         <AnimatedCounter end={28} suffix="" label="States" />
       </div>
@@ -83,9 +82,9 @@ const About = () => (
         <SectionHeading title="Quality Commitment" subtitle="Our unwavering commitment to quality drives everything we do." />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { icon: Award, title: "ISO 9001 Certified", desc: "Our quality management system meets international standards." },
-            { icon: Building2, title: "Modern Infrastructure", desc: "State-of-the-art warehousing and testing facilities." },
-            { icon: Users, title: "Expert Team", desc: "Experienced engineers and product specialists at your service." },
+            { icon: Award, title: "40+ Years Experience", desc: "Four decades of deep industry knowledge and trusted partnerships." },
+            { icon: Package, title: "Large & Diverse Product Catalogue", desc: "Comprehensive range of hoses, gaskets, and rubber products." },
+            { icon: Handshake, title: "Trusted Partner for Industries", desc: "Reliable solutions for pharmaceutical, steel and heavy industries." },
           ].map((item, i) => (
             <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card hover-lift p-6 text-center">
               <div className="w-14 h-14 mx-auto rounded-xl bg-highlight/10 flex items-center justify-center mb-4">

@@ -11,11 +11,8 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-10 h-10 rounded-full object-cover" />
-            <div>
-              <span className="font-heading font-bold text-sm block">Dupon Industrial</span>
-              <span className="text-xs text-primary-foreground/60">Enterprises</span>
-            </div>
+            <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
+            <span className="font-heading font-bold text-sm whitespace-nowrap">Dupon Industrial Enterprises</span>
           </div>
           <p className="text-primary-foreground/70 text-xs leading-relaxed">
             Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
@@ -32,7 +29,7 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-3">Products</h4>
           <ul className="space-y-1.5 text-xs text-primary-foreground/70">
-            {["Industrial Hose and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
+            {["Industrial Hoses and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
               <li key={p}><Link to="/products" className="hover:text-primary-foreground transition-colors">{p}</Link></li>
             ))}
           </ul>
@@ -62,7 +59,7 @@ const Footer = () => (
                 <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
               </a>
             </li>
-            <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 22 1234 5678</li>
+            <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 98480 18090 / +91 81798 25090</li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
           </ul>
         </div>
