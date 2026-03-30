@@ -16,6 +16,7 @@ import industryManufacturing from "@/assets/industry-manufacturing.jpg";
 import industryChemical from "@/assets/industry-chemical.jpg";
 import industryOilgas from "@/assets/industry-oilgas.jpg";
 import industryAutomotive from "@/assets/industry-automotive.jpg";
+import industryPharmaceutical from "@/assets/industry-pharmaceutical.jpg";
 
 // Subcategory images
 import subHosePipes from "@/assets/sub-hose-pipes.jpg";

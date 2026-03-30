@@ -10,6 +10,7 @@ const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory,
 const industryGradients = [
   "bg-gradient-to-br from-amber-900/60 via-orange-800/40 to-yellow-900/50",
   "bg-gradient-to-br from-green-900/60 via-emerald-800/40 to-lime-900/50",
+  "bg-gradient-to-br from-cyan-900/60 via-teal-800/40 to-emerald-900/50",
   "bg-gradient-to-br from-slate-800/60 via-zinc-700/40 to-gray-800/50",
   "bg-gradient-to-br from-purple-900/60 via-violet-800/40 to-fuchsia-900/50",
   "bg-gradient-to-br from-red-900/60 via-orange-900/40 to-amber-900/50",
