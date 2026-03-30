@@ -4,7 +4,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import AnimatedHero from "@/components/AnimatedHero";
 import heroAbout from "@/assets/hero-about.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
-import { Eye, Target, Award, Building2, Users } from "lucide-react";
+import { Eye, Target, Award, Package, Handshake } from "lucide-react";
 
 const timelineEvents = [
   { year: "1984", title: "Company Founded", desc: "Started as a small trading firm supplying industrial rubber products." },
