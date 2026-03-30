@@ -203,7 +203,7 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Shield, title: "40+ Years Expertise", desc: "Decades of deep industry knowledge and technical understanding." },
-              { icon: Package, title: "Large Inventory", desc: "Extensive stock of products ready for immediate dispatch." },
+              { icon: Package, title: "Large & Diverse Product Portfolio", desc: "Extensive range of products ready for immediate dispatch." },
               { icon: Lightbulb, title: "Technical Knowledge", desc: "Expert product selection guidance for your application." },
               { icon: Truck, title: "Reliable Supply Chain", desc: "Pan-India distribution network ensuring on-time delivery." },
               { icon: IndianRupee, title: "Competitive Pricing", desc: "Best value through strong manufacturer partnerships." },
