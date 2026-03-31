@@ -20,7 +20,7 @@ const Contact = () => (
       <div className="container-wide mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         <div>
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us</h2>
-          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <a
               href={HEAD_OFFICE_MAP}
               target="_blank"
