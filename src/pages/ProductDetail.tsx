@@ -204,7 +204,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Subcategory Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {product.subcategories.map((sub, i) => (
               <motion.button
                 key={sub.id}
@@ -213,7 +213,7 @@ const ProductDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className={`relative rounded-xl overflow-hidden group text-left transition-all min-h-[180px] ${
+                className={`relative rounded-xl overflow-hidden group text-left transition-all min-h-[120px] sm:min-h-[180px] ${
                   activeSub === i ? "ring-2 ring-highlight" : ""
                 }`}
               >
@@ -221,11 +221,11 @@ const ProductDetail = () => {
                   <img src={sub.image} alt={sub.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-navy-dark/50 group-hover:bg-navy-dark/40 transition-colors" />
                 </div>
-                <div className="relative p-5 flex flex-col justify-end min-h-[180px]">
-                  <h4 className="font-heading font-semibold text-primary-foreground text-sm leading-tight">{sub.name}</h4>
-                  <p className="text-xs text-primary-foreground/60 mt-1 line-clamp-2">{sub.description}</p>
-                  <span className="mt-2 text-xs font-medium text-highlight">
-                    {activeSub === i ? "Close ×" : "View Details →"}
+                <div className="relative p-3 sm:p-5 flex flex-col justify-end min-h-[120px] sm:min-h-[180px]">
+                  <h4 className="font-heading font-semibold text-primary-foreground text-xs sm:text-sm leading-tight">{sub.name}</h4>
+                  <p className="text-[10px] sm:text-xs text-primary-foreground/60 mt-1 line-clamp-2 hidden sm:block">{sub.description}</p>
+                  <span className="mt-1 sm:mt-2 text-[10px] sm:text-xs font-medium text-highlight">
+                    {activeSub === i ? "Close ×" : "Details →"}
                   </span>
                 </div>
               </motion.button>

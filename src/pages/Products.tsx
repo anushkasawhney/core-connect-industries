@@ -54,7 +54,7 @@ const Products = () => (
     <section className="section-padding bg-background">
       <div className="container-wide mx-auto">
         <SectionHeading title="Product Categories" subtitle="Browse our complete range of industrial engineering products." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {productCategories.map((cat, i) => (
             <motion.div
               key={cat.id}

@@ -8,7 +8,7 @@ import { productCategories, industries, brands } from "@/data/products";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionHeading from "@/components/SectionHeading";
 
-const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill };
+const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Pill };
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
