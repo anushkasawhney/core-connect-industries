@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill } from "lucide-react";
+import { ChevronDown, Shield, Package, Lightbulb, Truck, IndianRupee, Handshake, Building2, Sprout, Factory, FlaskConical, Fuel, Pill } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
 import { productCategories, industries, brands } from "@/data/products";
