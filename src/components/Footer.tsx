@@ -9,32 +9,36 @@ const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <div>
-          <div className="flex items-center gap-2 mb-3">
-            <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
-            <span className="font-heading font-bold text-sm whitespace-nowrap">Dupon Industrial Enterprises</span>
+        {/* Mobile left column: logo + quick links + products stacked */}
+        <div className="col-span-1 lg:col-span-3 flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-6">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
+              <span className="font-heading font-bold text-sm whitespace-nowrap">Dupon Industrial Enterprises</span>
+            </div>
+            <p className="text-primary-foreground/70 text-xs leading-relaxed">
+              Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
+            </p>
           </div>
-          <p className="text-primary-foreground/70 text-xs leading-relaxed">
-            Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
-          </p>
+          <div>
+            <h4 className="font-heading font-semibold text-sm mb-3">Quick Links</h4>
+            <ul className="space-y-1.5 text-xs text-primary-foreground/70">
+              {[{ to: "/", label: "Home" }, { to: "/products", label: "Products" }, { to: "/brands", label: "Brands" }, { to: "/about", label: "About Us" }, { to: "/contact", label: "Contact Us" }].map((link) => (
+                <li key={link.to}><Link to={link.to} className="hover:text-primary-foreground transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-heading font-semibold text-sm mb-3">Products</h4>
+            <ul className="space-y-1.5 text-xs text-primary-foreground/70">
+              {["Industrial Hoses and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
+                <li key={p}><Link to="/products" className="hover:text-primary-foreground transition-colors">{p}</Link></li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4 className="font-heading font-semibold text-sm mb-3">Quick Links</h4>
-          <ul className="space-y-1.5 text-xs text-primary-foreground/70">
-            {[{ to: "/", label: "Home" }, { to: "/products", label: "Products" }, { to: "/brands", label: "Brands" }, { to: "/about", label: "About Us" }, { to: "/contact", label: "Contact Us" }].map((link) => (
-              <li key={link.to}><Link to={link.to} className="hover:text-primary-foreground transition-colors">{link.label}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-heading font-semibold text-sm mb-3">Products</h4>
-          <ul className="space-y-1.5 text-xs text-primary-foreground/70">
-            {["Industrial Hoses and Pipes", "Industrial Gaskets", "Rubber Products"].map((p) => (
-              <li key={p}><Link to="/products" className="hover:text-primary-foreground transition-colors">{p}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
+        {/* Mobile right column / Desktop 4th column: Contact */}
+        <div className="col-span-1">
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <ul className="space-y-2 text-xs text-primary-foreground/70">
             <li>
@@ -76,4 +80,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
