@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import companyLogo from "@/assets/company-logo.png";
 
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
-const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Kompally+Hyderabad+Telangana";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
