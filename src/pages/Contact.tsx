@@ -55,7 +55,7 @@ const Contact = () => (
               </div>
             </a>
             {[
-              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"] },
+              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"], isPhone: true },
               { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
               { icon: Clock, title: "Business Hours", lines: ["Monday – Saturday: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
             ].map((item) => (
