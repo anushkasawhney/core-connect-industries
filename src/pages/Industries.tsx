@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { industries } from "@/data/products";
-import { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill } from "lucide-react";
+import { Building2, Sprout, Factory, FlaskConical, Fuel, Pill } from "lucide-react";
 import AnimatedHero from "@/components/AnimatedHero";
 import heroIndustries from "@/assets/hero-industries.jpg";
 
