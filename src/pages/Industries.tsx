@@ -147,7 +147,7 @@ const Industries = () => {
                     />
                     <div className={`absolute inset-0 ${industryGradients[i]} group-hover:opacity-80 transition-opacity`} />
                   </div>
-                  <div className="relative p-8 min-h-[220px] flex flex-col justify-end">
+                  <div className="relative p-4 sm:p-8 min-h-[150px] sm:min-h-[220px] flex flex-col justify-end">
                     <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center mb-4">
                       <Icon size={26} className="text-primary-foreground/80" />
                     </div>
