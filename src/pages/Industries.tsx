@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { industries } from "@/data/products";
-import { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill } from "lucide-react";
+import { Building2, Sprout, Factory, FlaskConical, Fuel, Pill } from "lucide-react";
 import AnimatedHero from "@/components/AnimatedHero";
 import heroIndustries from "@/assets/hero-industries.jpg";
 
-const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Car, Pill };
+const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Pill };
 
 const industryGradients = [
   "bg-gradient-to-br from-amber-900/60 via-orange-800/40 to-yellow-900/50",
@@ -122,7 +122,7 @@ const Industries = () => {
           </div>
 
           {/* Grid of all industries */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {industries.map((ind, i) => {
               const Icon = iconMap[ind.icon] || Factory;
               return (
@@ -147,13 +147,14 @@ const Industries = () => {
                     />
                     <div className={`absolute inset-0 ${industryGradients[i]} group-hover:opacity-80 transition-opacity`} />
                   </div>
-                  <div className="relative p-8 min-h-[220px] flex flex-col justify-end">
-                    <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center mb-4">
-                      <Icon size={26} className="text-primary-foreground/80" />
+                  <div className="relative p-4 sm:p-8 min-h-[150px] sm:min-h-[220px] flex flex-col justify-end">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center mb-2 sm:mb-4">
+                      <Icon size={20} className="text-primary-foreground/80 sm:hidden" />
+                      <Icon size={26} className="text-primary-foreground/80 hidden sm:block" />
                     </div>
-                    <h3 className="font-heading font-semibold text-primary-foreground text-lg">{ind.name}</h3>
-                    <p className="mt-2 text-sm text-primary-foreground/70">{ind.description}</p>
-                    <span className="mt-2 text-xs font-medium text-highlight">
+                    <h3 className="font-heading font-semibold text-primary-foreground text-sm sm:text-lg">{ind.name}</h3>
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-primary-foreground/70 hidden sm:block">{ind.description}</p>
+                    <span className="mt-1 sm:mt-2 text-[10px] sm:text-xs font-medium text-highlight">
                       {activeIndustry === i ? "Close ×" : "View Details →"}
                     </span>
                   </div>

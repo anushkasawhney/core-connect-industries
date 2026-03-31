@@ -17,10 +17,10 @@ const Contact = () => (
     />
 
     <section className="section-padding bg-background">
-      <div className="container-wide mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="container-wide mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         <div>
           <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us</h2>
-          <div className="space-y-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             <a
               href={HEAD_OFFICE_MAP}
               target="_blank"
@@ -74,10 +74,10 @@ const Contact = () => (
           </div>
 
           {/* Google Maps */}
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 grid grid-cols-2 gap-4">
             <div>
-              <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Head Office — Ranigunj, Secunderabad</h4>
-              <div className="rounded-lg overflow-hidden border border-border h-64">
+              <h4 className="font-heading font-semibold text-foreground text-xs mb-2">Head Office — Ranigunj</h4>
+              <div className="rounded-lg overflow-hidden border border-border h-40 sm:h-48 lg:h-64">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2563564!2d78.498317!3d17.439917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99d638a6e2d5%3A0x5b31f30b8e7e2b89!2sHill%20Street%2C%20Ranigunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                   width="100%"
@@ -93,14 +93,14 @@ const Contact = () => (
                 href={HEAD_OFFICE_MAP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors"
+                className="inline-flex items-center gap-1.5 mt-2 text-xs text-highlight hover:text-highlight/80 font-medium transition-colors"
               >
-                <MapPin size={14} /> Open in Google Maps
+                <MapPin size={12} /> Open in Maps
               </a>
             </div>
             <div>
-              <h4 className="font-heading font-semibold text-foreground text-sm mb-2">Branch Office — Kompally, Medchal</h4>
-              <div className="rounded-lg overflow-hidden border border-border h-64">
+              <h4 className="font-heading font-semibold text-foreground text-xs mb-2">Branch Office — Kompally</h4>
+              <div className="rounded-lg overflow-hidden border border-border h-40 sm:h-48 lg:h-64">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.5!2d78.4876!3d17.5234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f5e2c3a8cf%3A0x4d1f73cb9a2eab1e!2sKompally%2C%20Hyderabad%2C%20Telangana%20500100!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin"
                   width="100%"
@@ -116,9 +116,9 @@ const Contact = () => (
                 href={BRANCH_OFFICE_MAP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 text-sm text-highlight hover:text-highlight/80 font-medium transition-colors"
+                className="inline-flex items-center gap-1.5 mt-2 text-xs text-highlight hover:text-highlight/80 font-medium transition-colors"
               >
-                <MapPin size={14} /> Open in Google Maps
+                <MapPin size={12} /> Open in Maps
               </a>
             </div>
           </div>

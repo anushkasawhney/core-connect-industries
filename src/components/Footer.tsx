@@ -8,7 +8,7 @@ const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Kompa
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div>
           <div className="flex items-center gap-2 mb-3">
             <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
