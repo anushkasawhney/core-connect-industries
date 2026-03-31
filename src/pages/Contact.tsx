@@ -5,7 +5,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
-const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Kompally+Hyderabad+Telangana";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
 
 const Contact = () => (
   <main>
@@ -55,7 +55,7 @@ const Contact = () => (
               </div>
             </a>
             {[
-              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"] },
+              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"], isPhone: true },
               { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
               { icon: Clock, title: "Business Hours", lines: ["Monday – Saturday: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
             ].map((item) => (
@@ -66,7 +66,13 @@ const Contact = () => (
                 <div>
                   <h4 className="font-heading font-semibold text-foreground text-sm">{item.title}</h4>
                   {item.lines.map((line) => (
-                    <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                    'isPhone' in item && item.isPhone ? (
+                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-sm text-muted-foreground hover:text-highlight transition-colors">
+                        {line}
+                      </a>
+                    ) : (
+                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                    )
                   ))}
                 </div>
               </div>

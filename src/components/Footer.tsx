@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import companyLogo from "@/assets/company-logo.png";
 
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
-const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Kompally+Hyderabad+Telangana";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
@@ -63,7 +63,14 @@ const Footer = () => (
                 <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
               </a>
             </li>
-            <li className="flex items-center gap-2"><Phone size={14} className="shrink-0" /> +91 98480 18090 / +91 81798 25090</li>
+            <li className="flex items-center gap-2">
+              <Phone size={14} className="shrink-0" />
+              <span>
+                <a href="tel:+919848018090" className="hover:text-highlight transition-colors">+91 98480 18090</a>
+                {" / "}
+                <a href="tel:+918179825090" className="hover:text-highlight transition-colors">+91 81798 25090</a>
+              </span>
+            </li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
           </ul>
         </div>
