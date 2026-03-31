@@ -66,7 +66,13 @@ const Contact = () => (
                 <div>
                   <h4 className="font-heading font-semibold text-foreground text-sm">{item.title}</h4>
                   {item.lines.map((line) => (
-                    <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                    'isPhone' in item && item.isPhone ? (
+                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-sm text-muted-foreground hover:text-highlight transition-colors">
+                        {line}
+                      </a>
+                    ) : (
+                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                    )
                   ))}
                 </div>
               </div>
