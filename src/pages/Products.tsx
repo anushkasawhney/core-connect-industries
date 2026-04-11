@@ -78,13 +78,10 @@ const Products = () => (
 
     <section className="section-padding bg-surface">
       <div className="container-wide mx-auto text-center">
-        <SectionHeading title="Product Catalog" subtitle="Download our comprehensive product catalog and technical specifications." />
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <SectionHeading title="Product Catalog" subtitle="Download our comprehensive product catalog." />
+        <div className="flex justify-center">
           <button className="px-8 py-4 rounded-md gradient-navy text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
             Download Product Catalog
-          </button>
-          <button className="px-8 py-4 rounded-md border border-border text-foreground font-semibold text-sm hover:bg-accent transition-colors">
-            Download Technical Specifications
           </button>
         </div>
       </div>
