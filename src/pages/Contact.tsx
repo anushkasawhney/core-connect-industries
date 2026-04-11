@@ -3,12 +3,18 @@ import heroBg from "@/assets/hero-bg.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
+import SEO from "@/components/SEO";
 
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
 const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
 
 const Contact = () => (
   <main>
+    <SEO
+      title="Contact Us"
+      description="Contact Dupon Industrial Enterprises for industrial hoses, gaskets, and rubber product enquiries. Offices in Secunderabad and Kompally, Hyderabad."
+      canonical="/contact"
+    />
     <AnimatedHero
       image={heroBg}
       badge="Get In Touch"

@@ -7,6 +7,7 @@ import journeyHero from "@/assets/journey-hero.jpg";
 import { productCategories, industries, brands } from "@/data/products";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Pill };
 
@@ -66,7 +67,11 @@ const Index = () => {
 
   return (
     <main>
-      {/* Hero */}
+      <SEO
+        title="Home"
+        description="Dupon Industrial Enterprises - Trusted supplier of industrial hoses, gaskets, rubber mouldings and sealing solutions for over 40 years across India."
+        canonical="/"
+      />
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div className="absolute inset-0 origin-center" initial={{ scale: 1.3, rotateX: 8, rotateY: -5 }} animate={{ scale: 1, rotateX: 0, rotateY: 0 }} transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }} style={{ perspective: 1200, transformStyle: "preserve-3d" }}>
           <motion.img src={heroBg} alt="Industrial engineering background" className="w-full h-full object-cover" animate={{ scale: [1, 1.06, 1, 1.04, 1], rotateY: [0, 3, -3, 2, 0], rotateX: [0, -2, 2, -1, 0] }} transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} />

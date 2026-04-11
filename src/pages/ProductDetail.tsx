@@ -5,6 +5,7 @@ import { productCategories } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
+import SEO from "@/components/SEO";
 import { ChevronRight } from "lucide-react";
 
 const subcategoryGradients = [
@@ -56,6 +57,11 @@ const ProductDetail = () => {
 
   return (
     <main>
+      <SEO
+        title={product.name}
+        description={product.description}
+        canonical={`/products/${product.slug}`}
+      />
       <AnimatedHero
         image={product.images[0]}
         badge="Our Products"

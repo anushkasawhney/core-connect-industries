@@ -5,6 +5,7 @@ import { productCategories } from "@/data/products";
 import heroProducts from "@/assets/hero-products.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedHero from "@/components/AnimatedHero";
+import SEO from "@/components/SEO";
 
 const ProductImageRotator = ({ images, name }: { images: string[]; name: string }) => {
   const [current, setCurrent] = useState(0);
@@ -42,6 +43,11 @@ const ProductImageRotator = ({ images, name }: { images: string[]; name: string 
 
 const Products = () => (
   <main>
+    <SEO
+      title="Products"
+      description="Browse our comprehensive range of industrial hoses, hydraulic assemblies, gaskets, and custom rubber components. Pan-India supplier with 500+ product variants."
+      canonical="/products"
+    />
     <AnimatedHero
       image={heroProducts}
       badge="Our Products"

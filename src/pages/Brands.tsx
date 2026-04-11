@@ -5,6 +5,7 @@ import { brands } from "@/data/products";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
+import SEO from "@/components/SEO";
 import heroBrands from "@/assets/hero-brands.jpg";
 
 const brandGradients = [
@@ -53,6 +54,11 @@ const Brands = () => {
 
   return (
     <main>
+      <SEO
+        title="Our Brands"
+        description="Authorized distributors of leading global and domestic industrial brands. Premium hoses, gaskets, and rubber products from trusted manufacturers."
+        canonical="/brands"
+      />
       <AnimatedHero
         image={heroBrands}
         badge="Trusted Partners"

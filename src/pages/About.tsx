@@ -5,6 +5,7 @@ import AnimatedHero from "@/components/AnimatedHero";
 import heroAbout from "@/assets/hero-about.jpg";
 import journeyHero from "@/assets/journey-hero.jpg";
 import { Eye, Target, Award, Package, Handshake } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const timelineEvents = [
   { year: "1984", title: "Company Founded", desc: "Started as a small trading firm supplying industrial rubber products." },
@@ -16,6 +17,11 @@ const timelineEvents = [
 
 const About = () => (
   <main>
+    <SEO
+      title="About Us"
+      description="Learn about Dupon Industrial Enterprises - 40+ years of expertise in industrial hoses, gaskets, and rubber solutions. Pan-India distribution across 28 states."
+      canonical="/about"
+    />
     <AnimatedHero image={heroAbout} badge="Our Story" title="About Us" subtitle="Four decades of engineering industrial flow solutions with trust, precision, and reliability." />
 
     <section className="section-padding bg-card">

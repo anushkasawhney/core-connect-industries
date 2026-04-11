@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { industries } from "@/data/products";
 import { Building2, Sprout, Factory, FlaskConical, Fuel, Pill } from "lucide-react";
 import AnimatedHero from "@/components/AnimatedHero";
+import SEO from "@/components/SEO";
 import heroIndustries from "@/assets/hero-industries.jpg";
 
 const iconMap: Record<string, React.ElementType> = { Building2, Sprout, Factory, FlaskConical, Fuel, Pill };
@@ -33,6 +34,11 @@ const Industries = () => {
 
   return (
     <main>
+      <SEO
+        title="Industries We Serve"
+        description="Dupon Industrial Enterprises serves construction, agriculture, manufacturing, pharmaceutical, chemical, and oil & gas industries with industrial flow solutions."
+        canonical="/industries"
+      />
       <AnimatedHero
         image={heroIndustries}
         badge="Sector Expertise"
