@@ -160,17 +160,17 @@ const Index = () => {
       <section className="section-padding gradient-navy">
         <div className="container-wide mx-auto">
           <SectionHeading title="Industries We Serve" subtitle="Delivering engineered solutions across diverse industrial sectors." light />
-          <div className="flex flex-nowrap justify-center gap-6 max-w-5xl mx-auto overflow-x-auto">
+          <div className="flex flex-nowrap justify-center gap-4 sm:gap-6 max-w-5xl mx-auto">
             {industries.map((ind, i) => {
               const Icon = iconMap[ind.icon] || Factory;
               return (
-                <Link to="/industries" key={ind.name}>
+                <Link to="/industries" key={ind.name} className="flex-1 min-w-0">
                   <motion.div {...fadeUp} transition={{ duration: 0.5, delay: i * 0.08 }} className="text-center group cursor-pointer">
-                    <div className="w-16 h-16 mx-auto rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-highlight/20 transition-colors">
-                      <Icon size={28} className="text-primary-foreground/80" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-highlight/20 transition-colors">
+                      <Icon size={24} className="text-primary-foreground/80 sm:w-7 sm:h-7" />
                     </div>
-                    <h3 className="mt-3 font-heading font-semibold text-primary-foreground text-sm">{ind.name}</h3>
-                    <p className="mt-1 text-xs text-primary-foreground/50 hidden md:block">{ind.description}</p>
+                    <h3 className="mt-2 sm:mt-3 font-heading font-semibold text-primary-foreground text-xs sm:text-sm truncate">{ind.name}</h3>
+                    <p className="mt-1 text-xs text-primary-foreground/50 hidden lg:block line-clamp-2">{ind.description}</p>
                   </motion.div>
                 </Link>
               );
