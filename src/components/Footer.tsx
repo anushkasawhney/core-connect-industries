@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, FileDown } from "lucide-react";
 import companyLogo from "@/assets/company-logo.png";
 
 const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
@@ -72,7 +72,17 @@ const Footer = () => (
               </span>
             </li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
+            <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> sales@duponindustrial.com</li>
           </ul>
+          <a
+            href="/Dupon_Industrial_Enterprises.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-md border border-highlight/40 bg-highlight/10 text-highlight hover:bg-highlight/20 transition-colors text-xs font-semibold"
+          >
+            <FileDown size={16} />
+            Company Profile
+          </a>
         </div>
       </div>
       <div className="mt-6 pt-4 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-primary-foreground/50">
