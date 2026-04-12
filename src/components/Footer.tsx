@@ -19,6 +19,15 @@ const Footer = () => (
             <p className="text-primary-foreground/70 text-xs leading-relaxed">
               Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
             </p>
+            <a
+              href="/Dupon_Industrial_Enterprises.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-md gradient-navy text-primary-foreground font-semibold text-xs hover:opacity-90 transition-opacity border border-primary-foreground/20"
+            >
+              <FileDown size={16} />
+              Company Profile
+            </a>
           </div>
           <div>
             <h4 className="font-heading font-semibold text-sm mb-3">Quick Links</h4>
@@ -74,15 +83,6 @@ const Footer = () => (
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
             <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> sales@duponindustrial.com</li>
           </ul>
-          <a
-            href="/Dupon_Industrial_Enterprises.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-md border border-highlight/40 bg-highlight/10 text-highlight hover:bg-highlight/20 transition-colors text-xs font-semibold"
-          >
-            <FileDown size={16} />
-            Company Profile
-          </a>
         </div>
       </div>
       <div className="mt-6 pt-4 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-primary-foreground/50">
