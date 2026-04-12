@@ -68,12 +68,15 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 space-y-1">
               <MobileNavItem to="/" label="Home" active={isActive("/")} onClick={() => setMobileOpen(false)} />
-              <MobileDropdown label="Products" active={location.pathname.startsWith("/products")}>
+              <MobileDropdown label="Products" active={location.pathname.startsWith("/products")} onNavigate={() => setMobileOpen(false)}>
                 {productCategories.map((cat) => (
                   <Link key={cat.id} to={`/products/${cat.slug}`} className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
                     {cat.name}
                   </Link>
                 ))}
+                <Link to="/products" className="block px-4 py-2 text-sm font-medium text-highlight hover:underline" onClick={() => setMobileOpen(false)}>
+                  View All Products →
+                </Link>
               </MobileDropdown>
               <MobileNavItem to="/brands" label="Brands" active={location.pathname.startsWith("/brands")} onClick={() => setMobileOpen(false)} />
               <MobileNavItem to="/industries" label="Industries" active={isActive("/industries")} onClick={() => setMobileOpen(false)} />
@@ -101,14 +104,18 @@ const MobileNavItem = ({ to, label, active, onClick }: { to: string; label: stri
   </Link>
 );
 
-const MobileDropdown = ({ label, active, children }: { label: string; active: boolean; children: React.ReactNode }) => {
+const MobileDropdown = ({ label, active, children, onNavigate }: { label: string; active: boolean; children: React.ReactNode; onNavigate?: () => void }) => {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <button onClick={() => setOpen(!open)} className={`w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium ${active ? "text-highlight bg-highlight/5" : "text-foreground hover:bg-accent"}`}>
-        {label}
-        <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
+      <div className="flex items-center">
+        <Link to="/products" onClick={onNavigate} className={`flex-1 px-3 py-2.5 rounded-l-md text-sm font-medium ${active ? "text-highlight bg-highlight/5" : "text-foreground hover:bg-accent"}`}>
+          {label}
+        </Link>
+        <button onClick={() => setOpen(!open)} className={`px-3 py-2.5 rounded-r-md text-sm font-medium ${active ? "text-highlight bg-highlight/5" : "text-foreground hover:bg-accent"}`}>
+          <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+        </button>
+      </div>
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden pl-2">
