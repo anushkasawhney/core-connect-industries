@@ -10,7 +10,8 @@ const EnquiryForm = ({ productName, compact }: EnquiryFormProps) => {
   const inputClass = "w-full px-4 py-3 rounded-md border border-border bg-card text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-highlight/30 focus:border-highlight transition-colors";
 
   return (
-    <form action="https://formsubmit.co/karan.pittie@yahoo.com,anushka.sawhney.as@gmail.com" method="POST" className="space-y-4">
+    <form action="https://formsubmit.co/karan.pittie@yahoo.com" method="POST" className="space-y-4">
+      <input type="hidden" name="_cc" value="anushka.sawhney.as@gmail.com">
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_next" value={window.location.href} />
       <div className={compact ? "space-y-4" : "grid grid-cols-1 md:grid-cols-2 gap-4"}>
