@@ -86,9 +86,9 @@ const Products = () => (
       <div className="container-wide mx-auto text-center">
         <SectionHeading title="Product Catalog" subtitle="Download our comprehensive product catalog." />
         <div className="flex justify-center">
-          <button className="px-8 py-4 rounded-md gradient-navy text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">
+          <a href="/Dupon_Industrial_Enterprises.pdf" target="_blank" className="px-8 py-4 rounded-md gradient-navy text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity inline-block">
             Download Product Catalog
-          </button>
+          </a>
         </div>
       </div>
     </section>
