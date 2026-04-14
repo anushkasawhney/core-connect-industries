@@ -20,7 +20,7 @@ const Footer = () => (
               Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
             </p>
             <a
-              href="/Dupon_Industrial_Enterprises.pdf"
+              href="https://drive.google.com/file/d/1jSQh08Xamd3MLj8yKuQBWEufb6trbHnM/view"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-md gradient-navy text-primary-foreground font-semibold text-xs hover:opacity-90 transition-opacity border border-primary-foreground/20"
