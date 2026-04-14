@@ -14,7 +14,7 @@ const Footer = () => (
           <div>
             <div className="flex items-center gap-2 mb-3">
               <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
-              <span className="font-heading font-bold text-sm whitespace-nowrap">Dupon Industrial Enterprises</span>
+              <span className="font-heading font-bold text-sm">Dupon Industrial<br className="sm:hidden" /> Enterprises</span>
             </div>
             <p className="text-primary-foreground/70 text-xs leading-relaxed">
               Trusted supplier of industrial hoses, rubber products, gaskets, and sealing solutions for over 40 years.
