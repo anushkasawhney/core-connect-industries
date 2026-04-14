@@ -87,7 +87,7 @@ const Products = () => (
         <SectionHeading title="Product Catalog" subtitle="Download our comprehensive product catalog." />
         <div className="flex justify-center">
           <a href="https://drive.google.com/file/d/1ezdHh488hmbeyBR0kei4CgaOuVnpZ4WZ/view" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-md gradient-navy text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity inline-block">
-            Product Catalog
+            Download Product Catalog
           </a>
         </div>
       </div>
