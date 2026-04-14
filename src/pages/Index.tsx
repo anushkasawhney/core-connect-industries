@@ -160,7 +160,7 @@ const Index = () => {
       <section className="section-padding gradient-navy">
         <div className="container-wide mx-auto">
           <SectionHeading title="Industries We Serve" subtitle="Delivering engineered solutions across diverse industrial sectors." light />
-          <div className="flex flex-nowrap justify-center gap-4 sm:gap-6 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 max-w-5xl mx-auto">
             {industries.map((ind, i) => {
               const Icon = iconMap[ind.icon] || Factory;
               return (
