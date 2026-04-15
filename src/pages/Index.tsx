@@ -66,7 +66,7 @@ const Index = () => {
   const brandsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <SEO
         title="Home"
         description="Dupon Industrial Enterprises - Trusted supplier of industrial hoses, gaskets, rubber mouldings and sealing solutions for over 40 years across India."
