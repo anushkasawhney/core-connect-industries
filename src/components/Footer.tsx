@@ -6,7 +6,7 @@ const HEAD_OFFICE_MAP = "https://www.google.com/maps/place/first+floor,+DUPON+AG
 const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/6GbuMJFYeoztHrA29";
 
 const Footer = () => (
-  <footer className="gradient-navy text-primary-foreground">
+  <footer className="gradient-navy text-primary-foreground overflow-hidden">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {/* Mobile left column: logo + quick links + products stacked */}
