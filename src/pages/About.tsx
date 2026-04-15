@@ -16,7 +16,7 @@ const timelineEvents = [
 ];
 
 const About = () => (
-  <main>
+  <main className="overflow-x-hidden">
     <SEO
       title="About Us"
       description="Learn about Dupon Industrial Enterprises - 40+ years of expertise in industrial hoses, gaskets, and rubber solutions. Pan-India distribution across 28 states."
