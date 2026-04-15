@@ -5,8 +5,8 @@ import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 import SEO from "@/components/SEO";
 
-const HEAD_OFFICE_MAP = "https://www.google.com/maps/place/first+floor,+DUPON+AGENCIES,+4-3-82,+Hill+St,+near+Anjaiah+Complex,+Old+Bhoiguda,+Ranigunj,+Secunderabad,+Telangana+500003/data=!4m2!3m1!1s0x3bcb9a1c15555555:0x262cfb81babb4502!17m2!4m1!1e3!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI2LjQuMRgAINeCAyqnASw5NDI4NjU5NCw5NDI2NzcyNyw5NDI5MjE5NSw5NDI5OTUzMiwxMDA3OTY0OTgsMTAwNzk2NTM1LDk0Mjg0NDcyLDk0MjgwNTc2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE4NjUzLDk0MjI5ODM5LDk0Mjc1MTY4LDk0Mjc5NjE5LDEwMDc5MjU2OCwxMDA3OTE0ODMsMTAwNzk2MTg2QgJJTg%3D%3D&skid=5bb8548f-da7c-4db9-bc84-d15f112d502e&g_st=aw";
-const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/6GbuMJFYeoztHrA29";
+const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJVVVVFRyayzsRAkW7uoH7LCY";
+const BRANCH_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJGSjRWEOFyzsRYGdI9qAyCSg";
 
 const Contact = () => (
   <main>
@@ -91,7 +91,7 @@ const Contact = () => (
               <h4 className="font-heading font-semibold text-foreground text-xs mb-2">Head Office — Ranigunj</h4>
               <div className="rounded-lg overflow-hidden border border-border h-40 sm:h-48 lg:h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2563564!2d78.498317!3d17.439917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99d638a6e2d5%3A0x5b31f30b8e7e2b89!2sHill%20Street%2C%20Ranigunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.54234649629!2d78.48972757554903!3d17.433737201467483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1c15555555%3A0x262cfb81babb4502!2sDUPON%20AGENCIES!5e0!3m2!1sen!2sin!4v1776241860992!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -114,7 +114,7 @@ const Contact = () => (
               <h4 className="font-heading font-semibold text-foreground text-xs mb-2">Branch Office — Kompally</h4>
               <div className="rounded-lg overflow-hidden border border-border h-40 sm:h-48 lg:h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.5!2d78.4876!3d17.5234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f5e2c3a8cf%3A0x4d1f73cb9a2eab1e!2sKompally%2C%20Hyderabad%2C%20Telangana%20500100!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.97359719848!2d78.49086067555099!3d17.55644369791224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb854358d12819%3A0x280932a0f6486760!2sDUPON%20AGENCIES%20(KOMPALLY)%2F%20DUPON%20INDUSTRIAL%20ENTERPRISES%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1776241896110!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
