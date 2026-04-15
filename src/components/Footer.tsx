@@ -9,8 +9,8 @@ const Footer = () => (
   <footer className="gradient-navy text-primary-foreground overflow-hidden">
     <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {/* Mobile left column: logo + quick links + products stacked */}
-        <div className="col-span-1 lg:col-span-3 flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-6">
+        {/* Mobile left column: logo + quick links */}
+        <div className="col-span-1 lg:col-span-1 flex flex-col gap-4">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <img src={companyLogo} alt="Dupon Industrial Enterprises" className="w-12 h-12 rounded-full object-cover" />
@@ -37,6 +37,9 @@ const Footer = () => (
               ))}
             </ul>
           </div>
+        </div>
+        {/* Mobile right column: products + contact */}
+        <div className="col-span-1 lg:col-span-1 flex flex-col gap-4 min-w-0">
           <div>
             <h4 className="font-heading font-semibold text-sm mb-3">Products</h4>
             <ul className="space-y-1.5 text-xs text-primary-foreground/70">
@@ -45,29 +48,69 @@ const Footer = () => (
               ))}
             </ul>
           </div>
+          <div>
+            <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
+            <ul className="space-y-2 text-xs text-primary-foreground/70">
+              <li>
+                <a
+                  href={HEAD_OFFICE_MAP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 hover:text-highlight transition-colors"
+                >
+                  <MapPin size={12} className="mt-0.5 shrink-0" />
+                  <span className="break-words min-w-0">4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={BRANCH_OFFICE_MAP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 hover:text-highlight transition-colors"
+                >
+                  <MapPin size={12} className="mt-0.5 shrink-0" />
+                  <span className="break-words min-w-0">H.No.7-109/1, Kompally, Near Dhola-ri-Dhani, Medchal District - 500100</span>
+                </a>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <Phone size={12} className="mt-0.5 shrink-0" />
+                <span className="min-w-0">
+                  <a href="tel:+919848018090" className="hover:text-highlight transition-colors block">+91 98480 18090</a>
+                  <a href="tel:+918179825090" className="hover:text-highlight transition-colors block">+91 81798 25090</a>
+                </span>
+              </li>
+              <li className="flex items-start gap-1.5 min-w-0">
+                <Mail size={12} className="mt-0.5 shrink-0" />
+                <span className="break-all min-w-0 text-[10px] sm:text-xs">info@duponindustrial.com</span>
+              </li>
+              <li className="flex items-start gap-1.5 min-w-0">
+                <Mail size={12} className="mt-0.5 shrink-0" />
+                <span className="break-all min-w-0 text-[10px] sm:text-xs">sales@duponindustrial.com</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/* Mobile right column / Desktop 4th column: Contact */}
-        <div className="col-span-1 min-w-0">
+        {/* Desktop-only: extra columns for quick links and products */}
+        <div className="hidden lg:block">
+          <h4 className="font-heading font-semibold text-sm mb-3">Quick Links</h4>
+          <ul className="space-y-1.5 text-xs text-primary-foreground/70">
+            {[{ to: "/", label: "Home" }, { to: "/products", label: "Products" }, { to: "/brands", label: "Brands" }, { to: "/about", label: "About Us" }, { to: "/contact", label: "Contact Us" }].map((link) => (
+              <li key={link.to}><Link to={link.to} className="hover:text-primary-foreground transition-colors">{link.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div className="hidden lg:block min-w-0">
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <ul className="space-y-2 text-xs text-primary-foreground/70">
             <li>
-              <a
-                href={HEAD_OFFICE_MAP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-1.5 hover:text-highlight transition-colors"
-              >
+              <a href={HEAD_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="flex items-start gap-1.5 hover:text-highlight transition-colors">
                 <MapPin size={12} className="mt-0.5 shrink-0" />
                 <span className="break-words min-w-0">4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
               </a>
             </li>
             <li>
-              <a
-                href={BRANCH_OFFICE_MAP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-1.5 hover:text-highlight transition-colors"
-              >
+              <a href={BRANCH_OFFICE_MAP} target="_blank" rel="noopener noreferrer" className="flex items-start gap-1.5 hover:text-highlight transition-colors">
                 <MapPin size={12} className="mt-0.5 shrink-0" />
                 <span className="break-words min-w-0">H.No.7-109/1, Kompally, Near Dhola-ri-Dhani, Medchal District - 500100</span>
               </a>
@@ -81,11 +124,11 @@ const Footer = () => (
             </li>
             <li className="flex items-start gap-1.5 min-w-0">
               <Mail size={12} className="mt-0.5 shrink-0" />
-              <span className="break-all min-w-0 text-[10px] sm:text-xs">info@duponindustrial.com</span>
+              <span className="break-all min-w-0">info@duponindustrial.com</span>
             </li>
             <li className="flex items-start gap-1.5 min-w-0">
               <Mail size={12} className="mt-0.5 shrink-0" />
-              <span className="break-all min-w-0 text-[10px] sm:text-xs">sales@duponindustrial.com</span>
+              <span className="break-all min-w-0">sales@duponindustrial.com</span>
             </li>
           </ul>
         </div>
