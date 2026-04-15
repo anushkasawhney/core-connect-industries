@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, FileDown } from "lucide-react";
 import companyLogo from "@/assets/company-logo.png";
 
-const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
-const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
+const HEAD_OFFICE_MAP = "https://www.google.com/maps/place/first+floor,+DUPON+AGENCIES,+4-3-82,+Hill+St,+near+Anjaiah+Complex,+Old+Bhoiguda,+Ranigunj,+Secunderabad,+Telangana+500003/data=!4m2!3m1!1s0x3bcb9a1c15555555:0x262cfb81babb4502!17m2!4m1!1e3!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI2LjQuMRgAINeCAyqnASw5NDI4NjU5NCw5NDI2NzcyNyw5NDI5MjE5NSw5NDI5OTUzMiwxMDA3OTY0OTgsMTAwNzk2NTM1LDk0Mjg0NDcyLDk0MjgwNTc2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE4NjUzLDk0MjI5ODM5LDk0Mjc1MTY4LDk0Mjc5NjE5LDEwMDc5MjU2OCwxMDA3OTE0ODMsMTAwNzk2MTg2QgJJTg%3D%3D&skid=5bb8548f-da7c-4db9-bc84-d15f112d502e&g_st=aw";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/6GbuMJFYeoztHrA29";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">
@@ -47,7 +47,7 @@ const Footer = () => (
           </div>
         </div>
         {/* Mobile right column / Desktop 4th column: Contact */}
-        <div className="col-span-1">
+        <div className="col-span-1 min-w-0">
           <h4 className="font-heading font-semibold text-sm mb-3">Contact</h4>
           <ul className="space-y-2 text-xs text-primary-foreground/70">
             <li>
@@ -55,10 +55,10 @@ const Footer = () => (
                 href={HEAD_OFFICE_MAP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 hover:text-highlight transition-colors"
+                className="flex items-start gap-1.5 hover:text-highlight transition-colors"
               >
-                <MapPin size={14} className="mt-0.5 shrink-0" />
-                <span>4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
+                <MapPin size={12} className="mt-0.5 shrink-0" />
+                <span className="break-words min-w-0">4-3-82, First Floor, Hill Street, Ranigunj, Secunderabad - 500003</span>
               </a>
             </li>
             <li>
@@ -66,22 +66,27 @@ const Footer = () => (
                 href={BRANCH_OFFICE_MAP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 hover:text-highlight transition-colors"
+                className="flex items-start gap-1.5 hover:text-highlight transition-colors"
               >
-                <MapPin size={14} className="mt-0.5 shrink-0" />
-                <span>H.No.7-109/1, Kompally, Near Dhola-ri-Dhani / RCI Logistics, Kompally Dundigal, Gandimaisamma (Mandal), Medchal District - 500100</span>
+                <MapPin size={12} className="mt-0.5 shrink-0" />
+                <span className="break-words min-w-0">H.No.7-109/1, Kompally, Near Dhola-ri-Dhani, Medchal District - 500100</span>
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <Phone size={14} className="shrink-0" />
-              <span>
-                <a href="tel:+919848018090" className="hover:text-highlight transition-colors">+91 98480 18090</a>
-                {" / "}
-                <a href="tel:+918179825090" className="hover:text-highlight transition-colors">+91 81798 25090</a>
+            <li className="flex items-start gap-1.5">
+              <Phone size={12} className="mt-0.5 shrink-0" />
+              <span className="min-w-0">
+                <a href="tel:+919848018090" className="hover:text-highlight transition-colors block">+91 98480 18090</a>
+                <a href="tel:+918179825090" className="hover:text-highlight transition-colors block">+91 81798 25090</a>
               </span>
             </li>
-            <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> info@duponindustrial.com</li>
-            <li className="flex items-center gap-2"><Mail size={14} className="shrink-0" /> sales@duponindustrial.com</li>
+            <li className="flex items-start gap-1.5">
+              <Mail size={12} className="mt-0.5 shrink-0" />
+              <span className="break-all min-w-0">info@duponindustrial.com</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <Mail size={12} className="mt-0.5 shrink-0" />
+              <span className="break-all min-w-0">sales@duponindustrial.com</span>
+            </li>
           </ul>
         </div>
       </div>
