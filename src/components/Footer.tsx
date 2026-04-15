@@ -79,13 +79,13 @@ const Footer = () => (
                 <a href="tel:+918179825090" className="hover:text-highlight transition-colors block">+91 81798 25090</a>
               </span>
             </li>
-            <li className="flex items-start gap-1.5">
+            <li className="flex items-start gap-1.5 min-w-0">
               <Mail size={12} className="mt-0.5 shrink-0" />
-              <span className="break-all min-w-0">info@duponindustrial.com</span>
+              <span className="break-all min-w-0 text-[10px] sm:text-xs">info@duponindustrial.com</span>
             </li>
-            <li className="flex items-start gap-1.5">
+            <li className="flex items-start gap-1.5 min-w-0">
               <Mail size={12} className="mt-0.5 shrink-0" />
-              <span className="break-all min-w-0">sales@duponindustrial.com</span>
+              <span className="break-all min-w-0 text-[10px] sm:text-xs">sales@duponindustrial.com</span>
             </li>
           </ul>
         </div>
