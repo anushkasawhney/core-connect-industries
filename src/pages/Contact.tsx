@@ -5,8 +5,8 @@ import EnquiryForm from "@/components/EnquiryForm";
 import AnimatedHero from "@/components/AnimatedHero";
 import SEO from "@/components/SEO";
 
-const HEAD_OFFICE_MAP = "https://www.google.com/maps/search/?api=1&query=4-3-82+Hill+Street+Ranigunj+Secunderabad+500003";
-const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/wfXEw2sh3XZhVHKB8?g_st=iw";
+const HEAD_OFFICE_MAP = "https://www.google.com/maps/place/first+floor,+DUPON+AGENCIES,+4-3-82,+Hill+St,+near+Anjaiah+Complex,+Old+Bhoiguda,+Ranigunj,+Secunderabad,+Telangana+500003/data=!4m2!3m1!1s0x3bcb9a1c15555555:0x262cfb81babb4502!17m2!4m1!1e3!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI2LjQuMRgAINeCAyqnASw5NDI4NjU5NCw5NDI2NzcyNyw5NDI5MjE5NSw5NDI5OTUzMiwxMDA3OTY0OTgsMTAwNzk2NTM1LDk0Mjg0NDcyLDk0MjgwNTc2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE4NjUzLDk0MjI5ODM5LDk0Mjc1MTY4LDk0Mjc5NjE5LDEwMDc5MjU2OCwxMDA3OTE0ODMsMTAwNzk2MTg2QgJJTg%3D%3D&skid=5bb8548f-da7c-4db9-bc84-d15f112d502e&g_st=aw";
+const BRANCH_OFFICE_MAP = "https://maps.app.goo.gl/6GbuMJFYeoztHrA29";
 
 const Contact = () => (
   <main>
