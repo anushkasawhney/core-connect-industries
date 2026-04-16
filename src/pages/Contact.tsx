@@ -65,19 +65,21 @@ const Contact = () => (
               { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
               { icon: Clock, title: "Business Hours", lines: ["Monday – Saturday: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
             ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
-                  <item.icon size={18} className="text-highlight" />
+              <div key={item.title} className="flex items-start gap-2 sm:gap-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
+                  <item.icon size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="font-heading font-semibold text-foreground text-sm">{item.title}</h4>
                   {item.lines.map((line) => (
                     'isPhone' in item && item.isPhone ? (
-                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-sm text-muted-foreground hover:text-highlight transition-colors">
+                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-xs sm:text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">
                         {line}
                       </a>
+                    ) : item.title === "Email" ? (
+                      <p key={line} className="text-xs sm:text-sm text-muted-foreground break-all">{line}</p>
                     ) : (
-                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                      <p key={line} className="text-xs sm:text-sm text-muted-foreground">{line}</p>
                     )
                   ))}
                 </div>
