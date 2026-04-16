@@ -60,29 +60,39 @@ const Contact = () => (
                 <p className="text-sm text-muted-foreground">Medchal District - 500100</p>
               </div>
             </a>
-            {[
-              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"], isPhone: true, fullWidth: true },
-              { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"], fullWidth: true },
-              { icon: Clock, title: "Business Hours", lines: ["Mon – Sat: 9 AM – 6 PM", "Sunday: Closed"], rightAlign: true },
-            ].map((item) => (
-              <div key={item.title} className={`flex items-start gap-2 sm:gap-4 ${'fullWidth' in item && item.fullWidth ? 'col-span-2 md:col-span-1 lg:col-span-2' : ''} ${'rightAlign' in item && item.rightAlign ? 'col-start-2 md:col-start-auto' : ''}`}>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
-                  <item.icon size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="font-heading font-semibold text-foreground text-sm">{item.title}</h4>
-                  {item.lines.map((line) => (
-                    'isPhone' in item && item.isPhone ? (
-                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">
-                        {line}
-                      </a>
-                    ) : (
-                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
-                    )
-                  ))}
-                </div>
+            {/* Phone */}
+            <div className="flex items-start gap-2 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
+                <Phone size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
               </div>
-            ))}
+              <div className="min-w-0">
+                <h4 className="font-heading font-semibold text-foreground text-sm">Phone</h4>
+                <a href="tel:+919848018090" className="block text-xs sm:text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">+91 98480 18090</a>
+                <a href="tel:+918179825090" className="block text-xs sm:text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">+91 81798 25090</a>
+              </div>
+            </div>
+            {/* Business Hours */}
+            <div className="flex items-start gap-2 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
+                <Clock size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-heading font-semibold text-foreground text-sm">Business Hours</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">Mon – Sat: 9 AM – 6 PM</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Sunday: Closed</p>
+              </div>
+            </div>
+            {/* Email - full width */}
+            <div className="flex items-start gap-2 sm:gap-4 col-span-2 md:col-span-1 lg:col-span-2">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
+                <Mail size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-heading font-semibold text-foreground text-sm">Email</h4>
+                <p className="text-sm text-muted-foreground">info@duponindustrial.com</p>
+                <p className="text-sm text-muted-foreground">sales@duponindustrial.com</p>
+              </div>
+            </div>
           </div>
 
           {/* Google Maps */}
