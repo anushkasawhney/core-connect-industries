@@ -61,11 +61,11 @@ const Contact = () => (
               </div>
             </a>
             {[
-              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"], isPhone: true },
-              { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"] },
+              { icon: Phone, title: "Phone", lines: ["+91 98480 18090", "+91 81798 25090"], isPhone: true, fullWidth: true },
+              { icon: Mail, title: "Email", lines: ["info@duponindustrial.com", "sales@duponindustrial.com"], fullWidth: true },
               { icon: Clock, title: "Business Hours", lines: ["Monday – Saturday: 9:00 AM – 6:00 PM", "Sunday: Closed"] },
             ].map((item) => (
-              <div key={item.title} className="flex items-start gap-2 sm:gap-4">
+              <div key={item.title} className={`flex items-start gap-2 sm:gap-4 ${'fullWidth' in item && item.fullWidth ? 'col-span-2 md:col-span-1 lg:col-span-2' : ''}`}>
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-highlight/10 flex items-center justify-center shrink-0">
                   <item.icon size={16} className="text-highlight sm:w-[18px] sm:h-[18px]" />
                 </div>
@@ -73,13 +73,11 @@ const Contact = () => (
                   <h4 className="font-heading font-semibold text-foreground text-sm">{item.title}</h4>
                   {item.lines.map((line) => (
                     'isPhone' in item && item.isPhone ? (
-                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-xs sm:text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">
+                      <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="block text-sm text-muted-foreground hover:text-highlight transition-colors whitespace-nowrap">
                         {line}
                       </a>
-                    ) : item.title === "Email" ? (
-                      <p key={line} className="text-xs sm:text-sm text-muted-foreground break-all">{line}</p>
                     ) : (
-                      <p key={line} className="text-xs sm:text-sm text-muted-foreground">{line}</p>
+                      <p key={line} className="text-sm text-muted-foreground">{line}</p>
                     )
                   ))}
                 </div>
